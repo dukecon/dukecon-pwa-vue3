@@ -35,8 +35,18 @@ export const saveHorses = async (horses, queryString = '') => {
 	await writeJson(horses, queryString);
 };
 
-export const getConferenceData = async () => {
-	const horses = await fetchJson('horses.json');
+export const loadConferenceData = async (conferenceId) => {
+	const horses = await fetchJson(conferenceId + '.json');
+	return horses;
+};
+
+export const loadMetadata = async () => {
+	const horses = await fetchJson('init.json');
+	return horses;
+};
+
+export const loadImages = async () => {
+	const horses = await fetchJson('image-resources.json');
 	return horses;
 };
 
