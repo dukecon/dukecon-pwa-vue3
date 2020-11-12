@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="talks-overview container">
     <talks-grid :events="events"/>
   </div>
 </template>

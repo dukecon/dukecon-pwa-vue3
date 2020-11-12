@@ -4,11 +4,11 @@
 		<router-link to="/">Home</router-link> |
 		<router-link to="/about">About</router-link>
 	</header>
-	<main class="box">
+	<main class="main box">
 		<side-menu>
 			<Suspense>
 				<template #default>
-						<filters />
+					<filters />
 				</template>
 				<template #fallback>...</template>
 			</Suspense>
@@ -39,14 +39,3 @@ export default {
 	}
 };
 </script>
-<style>
-#app {
-	height: 100vh;
-	display: grid;
-	grid-template-rows: 2em 1fr 2em;
-}
-.footer {
-	height: 2em;
-	padding: 0;
-}
-</style>

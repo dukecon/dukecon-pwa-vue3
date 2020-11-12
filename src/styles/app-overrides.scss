@@ -1,0 +1,42 @@
+html, body {
+	height: 100vh;
+	overflow-y: auto;
+}
+#app {
+	height: 100vh;
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"sidebar main"
+		"footer footer";
+	grid-template-rows: 3em 1fr 2em;
+	grid-template-columns: auto 1fr;
+}
+.main {
+	display: contents;
+	grid-template-columns: auto 1fr;
+}
+.side-menu {
+	grid-area: sidebar;
+	background: wheat;
+	width: 50px;
+	transition: width 0.3s ease-in-out;
+	&.is-open {
+		width: 300px;
+	}
+}
+.header {
+	grid-area: header;
+	background: lightgreen;
+}
+.talks-overview {
+	padding: 0.5em;
+	grid-area: main;
+	overflow: auto;
+	max-height: calc(100vh - 5em);
+}
+.footer {
+	grid-area: footer;
+	height: 2em;
+	padding: 0;
+}
