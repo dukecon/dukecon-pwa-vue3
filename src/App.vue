@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
 import SideMenu from './components/SideMenu';
 import Filters from './components/Filters';
 
@@ -35,7 +36,8 @@ export default {
 		Filters,
 	},
 	setup() {
-
+		const store = useStore();
+		store.dispatch('load');
 	}
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="talks-overview container">
+	<!-- includes tabs for day selection and the grid separated by time slots -->
     <talks-grid :events="events"/>
   </div>
 </template>

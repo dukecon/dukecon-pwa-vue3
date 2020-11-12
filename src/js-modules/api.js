@@ -36,17 +36,14 @@ export const saveHorses = async (horses, queryString = '') => {
 };
 
 export const loadConferenceData = async (conferenceId) => {
-	const horses = await fetchJson(conferenceId + '.json');
-	return horses;
+	return fetchJson(conferenceId + '.json');
 };
 
 export const loadMetadata = async () => {
-	const horses = await fetchJson('init.json');
-	return horses;
+	return fetchJson('init.json');
 };
 
 export const loadImages = async () => {
-	const horses = await fetchJson('image-resources.json');
-	return horses;
+	return fetchJson('image-resources.json');
 };
 
