@@ -1,8 +1,15 @@
 <template>
 	<header class="header">
-		Logo
-		<router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link>
+		<div class="logo">
+			<img alt="" src="./assets/logo.png"> 
+		</div>
+		<nav class="tabs">
+			<ul>
+				<li :class="{'is-active': $route.path==='/'}"><router-link to="/">Home</router-link></li>
+				<li :class="{'is-active': $route.path==='/about'}"><router-link to="/about">About</router-link></li>
+			</ul>
+		</nav>
+		<div class="search">&nbsp;</div>
 	</header>
 	<main class="main box">
 		<side-menu>
