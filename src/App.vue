@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { useStore } from 'vuex';
 import HeaderBar from '@/components/header/HeaderBar';
 import FooterBar from '@/components/FooterBar';
 
-export default {
+export default defineComponent({
 	components: {
 		HeaderBar,
 		FooterBar,
@@ -23,5 +23,5 @@ export default {
 			loginEnabled,
 		}
 	}
-};
+});
 </script>

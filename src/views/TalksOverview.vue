@@ -26,7 +26,7 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 import SideMenu from '@/components/SideMenu.vue';
 import Filters from '@/components/Filters.vue';
-import TalksGrid from '@/components/TalksGrid.vue';
+import TalksGrid from '@/components/overview/TalksGrid.vue';
 
 export default {
 	components: {

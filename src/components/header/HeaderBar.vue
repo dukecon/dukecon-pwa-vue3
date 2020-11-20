@@ -10,14 +10,14 @@
 	</header>
 </template>
 <script>
-import { ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { useStore } from 'vuex';
 import LoginArea from '@/components/header/LoginArea';
 import QuickSearch from '@/components/header/QuickSearch';
 import NavMenu from '@/components/header/NavMenu';
 import LanguageSelect from '@/components/header/LanguageSelect';
 
-export default {
+export default defineComponent({
 	components: {
 		LoginArea,
 		QuickSearch,
@@ -32,5 +32,5 @@ export default {
 			loginEnabled,
 		}
 	}
-};
+});
 </script>

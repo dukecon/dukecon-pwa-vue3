@@ -52,10 +52,24 @@ html, body {
 .side-menu {
 	grid-area: sidebar;
 	background: wheat;
+	position: relative;
 	width: 50px;
 	transition: width 0.3s ease-in-out;
+	.toggle-menu-content {
+		position: absolute;
+		top: 50px;
+		left: -250px;
+		right: 0;
+		transition: left 0.3s ease-in-out;
+		position: absolute;
+		padding-right: 50px;
+	}
 	&.is-open {
 		width: 300px;
+		.toggle-menu-content {
+			left: 0;
+			visibility: visible;
+		}
 	}
 }
 

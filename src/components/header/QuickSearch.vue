@@ -18,5 +18,5 @@ export default defineComponent({
 			searchString,
 		}
 	}
-})
+});
 </script>
