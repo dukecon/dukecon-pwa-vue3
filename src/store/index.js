@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
-import { loadConferenceData, loadMetadata } from '../js-modules/api';
+import { loadConferenceData, loadMetadata } from '@/js-modules/api';
+import { filterFieldsBySearchstring } from '@/js-modules/filter';
 
 export default createStore({
 	strict: true,
@@ -18,7 +19,11 @@ export default createStore({
 		eventTypes: [],
 
 	},
-	getters: {},
+	getters: {
+		filteredBySearchstring: (state, searchString) => {
+			return filterFieldsBySearchstring(state.events, searchString);
+		}
+	},
 	mutations: {
 		initialize: (state, metaData) => {
 			state.id = metaData.id;
