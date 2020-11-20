@@ -1,10 +1,11 @@
 import { createStore } from "vuex";
 import { loadConferenceData, loadMetadata } from '@/js-modules/api';
-import { filterFieldsBySearchstring } from '@/js-modules/filter';
+import { eventMatches } from '@/js-modules/filter';
 
-export default createStore({
+export const store = createStore({
 	strict: true,
 	state: {
+		searchString: '',
 		filters: {},
 		id: "javaland2019",
 		name: "New Vue3",
@@ -20,13 +21,18 @@ export default createStore({
 
 	},
 	getters: {
-		filteredBySearchstring: (state, searchString) => {
-			return filterFieldsBySearchstring(state.events, searchString);
+		filteredBySearchstring: ({ searchString, events }) => {
+			return searchString?.length > 2 ?
+				events.filter(eventMatches(searchString)) :
+				events;
 		}
 	},
 	mutations: {
 		initialize: (state, metaData) => {
 			state.id = metaData.id;
+		},
+		setSearchString: (state, newValue) => {
+			state.searchString = newValue;
 		},
 		updateConferences: (state, conferences) => {
 			state.name = conferences.name;
@@ -38,14 +44,18 @@ export default createStore({
 		}
 	},
 	actions: {
-		init: async({ commit}) => {
+		init: async({ commit }) => {
 			const result = await loadMetadata();
 			commit('initialize', result);
 		},
-		load: async ({commit, state}) => {
+		setSearchString: ({ commit }, newValue) => {
+			commit('setSearchString', newValue);
+		},
+		load: async ({ commit, state }) => {
 			const result = await loadConferenceData(state.id);
 			commit('updateConferences', result);
 		}
 	},
 	modules: {}
 });
+export type store = typeof store;

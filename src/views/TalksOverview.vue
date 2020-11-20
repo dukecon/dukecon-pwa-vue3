@@ -20,12 +20,12 @@
 	</Suspense>
 </template>
 
-<script>
+<script lang="ts">
 // @ is an alias to /src
 import { computed } from 'vue';
 import { useStore } from 'vuex';
-import SideMenu from '@/components/SideMenu';
-import Filters from '@/components/Filters';
+import SideMenu from '@/components/SideMenu.vue';
+import Filters from '@/components/Filters.vue';
 import TalksGrid from '@/components/TalksGrid.vue';
 
 export default {
@@ -36,7 +36,7 @@ export default {
 	},
 	setup() {
 		const store = useStore();
-		const events = computed(() => store.state.events);
+		const events = computed(() => store.getters.filteredBySearchstring);
 
 		return {
 			events,
