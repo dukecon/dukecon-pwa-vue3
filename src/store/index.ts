@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
-import { loadConferenceData, loadMetadata } from '@/js-modules/api';
-import { eventMatches } from '@/js-modules/filter';
+import { loadConferenceData, loadMetadata } from '@/utils/api';
+import { eventMatches } from '@/utils/filter';
 
 export const store = createStore({
 	strict: true,

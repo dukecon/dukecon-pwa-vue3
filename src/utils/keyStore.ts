@@ -1,6 +1,6 @@
 export const keystorePrefix = 'dukecon:';
 
-export const saveKey = (key, value) => {
+export const saveKey = (key: string, value: any) => {
 	if (localStorage) {
 		try {
 			localStorage.setItem(keystorePrefix + key, JSON.stringify(value));
@@ -12,7 +12,7 @@ export const saveKey = (key, value) => {
 	}
 };
 
-export const getKey = (key, defaultValue) => {
+export const getKey = (key: string, defaultValue: any) => {
 	if (localStorage) {
 		let value;
 		try {
@@ -32,7 +32,7 @@ export const getKey = (key, defaultValue) => {
 	}
 };
 
-export const removeKey = (key) => {
+export const removeKey = (key: string) => {
 	if (localStorage) {
 		try {
 			localStorage.removeItem(keystorePrefix + key);

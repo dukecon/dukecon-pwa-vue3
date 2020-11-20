@@ -1,7 +1,7 @@
 const baseGetUrl = "/rest/conferences/";
 const postUrl = "/json.php?";
 
-const postResultHandler = (result) => {
+const postResultHandler = (result: any) => {
 	if (result.status === 200) {
 		console.log('Saved to server');
 	} else {
@@ -9,7 +9,7 @@ const postResultHandler = (result) => {
 	}
 }
 
-const fetchJson = (relativePath) => {
+const fetchJson = (relativePath: string) => {
 	console.log('getting data from server...');
 	return fetch(baseGetUrl + relativePath)
 			.then((response) => response.json())
@@ -17,7 +17,7 @@ const fetchJson = (relativePath) => {
 };
 
 
-const writeJson = async (data, queryString = '') => {
+const writeJson = async (data: any, queryString = '') => {
 	const postOptions = {
 		headers: {
 			'Accept': 'application/json',
@@ -30,12 +30,12 @@ const writeJson = async (data, queryString = '') => {
 		.then((result) => postResultHandler(result));
 };
 
-export const saveHorses = async (horses, queryString = '') => {
-	console.log(`Write ${horses?.length} horses`);
-	await writeJson(horses, queryString);
+export const saveHorses = async (data: any, queryString = '') => {
+	console.log(`Write ${data?.length} horses`);
+	await writeJson(data, queryString);
 };
 
-export const loadConferenceData = async (conferenceId) => {
+export const loadConferenceData = async (conferenceId: string) => {
 	return fetchJson(conferenceId + '.json');
 };
 
