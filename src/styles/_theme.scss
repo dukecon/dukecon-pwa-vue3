@@ -25,7 +25,9 @@ $size-4: 1rem;
 $size-5: 1rem;
 $size-6: 1rem;
 
-// components: tabs
-$tabs-link-hover-border-bottom-color: $white;
-$tabs-link-active-border-bottom-color: findLightColor($primary);
-
+//----------- components
+$navbar-background-color: rbga(0,0,0,0);
+$navbar-height: 3rem;
+$navbar-item-color: $white-ter;
+$navbar-item-hover-background-color: $white-ter;
+$navbar-item-active-background-color: $white;
