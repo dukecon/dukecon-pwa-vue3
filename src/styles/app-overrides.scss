@@ -1,86 +1,20 @@
-html, body {
-	height: 100vh;
-	overflow-y: auto;
-}
+@import './_theme';
+@import './layout/page';
+@import './layout/side-menu';
+@import './layout/talks';
 
-// layout
-
-#app {
-	height: 100vh;
-	display: grid;
-	grid-template-areas:
-		"header header"
-		"sidebar main"
-		"footer footer";
-	grid-template-rows: 3rem 1fr 2rem;
-	grid-template-columns: auto 1fr;
+*, ::before, ::after {
+	box-sizing: border-box;
 }
 
 .header {
-	grid-area: header;
-	display: grid;
-	grid-template: "logo search login nav lang" 3em / auto 1fr auto auto auto;
-	align-items: center;
-	justify-items: left;
-	background: lightgreen;
-	grid-gap: 0.5rem;
-	.logo {
-		grid-area: logo;
-		height: 3rem;
-		img {
-			height: 100%;
-		}
-	}
-	.nav {
-		grid-area: nav;
-	}
-	.search {
-		grid-area: search;
-	}
-	.login-area {
-		grid-area: login;
-	}
-	.tabs:not(:last-child), .field:not(:last-child) {
-		margin-bottom: 0;
-	}
-}
-
-.main {
-	display: contents;
+	box-shadow: $boxShadowTop
 }
 
 .side-menu {
-	grid-area: sidebar;
-	background: wheat;
-	position: relative;
-	width: 50px;
-	transition: width 0.3s ease-in-out;
-	.toggle-menu-content {
-		position: absolute;
-		top: 50px;
-		left: -250px;
-		right: 0;
-		transition: left 0.3s ease-in-out;
-		position: absolute;
-		padding-right: 50px;
-	}
-	&.is-open {
-		width: 300px;
-		.toggle-menu-content {
-			left: 0;
-			visibility: visible;
-		}
-	}
+	box-shadow: $boxShadowLeft;
 }
 
-.main-area {
-	padding: 0.5rem;
-	grid-area: main;
-	overflow: auto;
-	max-height: calc(100vh - 5rem);
-}
-.footer {
-	grid-area: footer;
-	height: 2rem;
-	padding: 0;
+*:focus 	{
+	outline: 2px solid inherit;	
 }

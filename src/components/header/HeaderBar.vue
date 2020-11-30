@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header has-background-primary has-text-white">
 		<div class="logo">
 			<img alt="" src="@/assets/logo.png">
 		</div>

@@ -1,6 +1,31 @@
+@import './custom-colors.scss';
+
+//----------- colors
+$highlight-light: findLightColor($highlight) !default;
+$highlight-dark: findDarkColor($highlight) !default;
+$alternate-light: findLightColor($alternate) !default;
+$alternate-dark: findDarkColor($alternate) !default;
+
+$info: $highlight !default;
+$warn: $alternate !default;
+$white-ter: #eee !default;
+
+// .is-highlight/.is-alternate maps to these
+$custom-colors: ("highlight": ($highlight-dark, $highlight-light), "alternate": ($alternate-dark, $alternate-light));
+
+$colorBoxShadow: rgba(0,0,0,0.3);
+$boxShadowLeft: 4px 0px 3px -2px $colorBoxShadow;
+$boxShadowTop:  0px 4px 3px -2px $colorBoxShadow;
+
+//----------- sizes 
 $size-1: 1.5rem;
 $size-2: 1.25rem;
 $size-3: 1.1rem;
 $size-4: 1rem;
 $size-5: 1rem;
 $size-6: 1rem;
+
+// components: tabs
+$tabs-link-hover-border-bottom-color: $white;
+$tabs-link-active-border-bottom-color: findLightColor($primary);
+

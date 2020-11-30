@@ -1,24 +1,30 @@
 <template>
-	<!-- Should slide in on small screens, always visible on wider screens -->
-	<div class="side-menu" :class="{ 'is-open': menuOpen }">
-		<button class="toggle-menu-button button is-pulled-right" @click="toggleMenu()">☰</button>
+	<input type=checkbox id="side-menu-toggle" class="toggle-menu-checkbox" />
+	<div class="side-menu">
+		<label for="side-menu-toggle" class="toggle-menu-button button is-pulled-right" :title="title">
+			<slot name="toggle-button-icon" />
+		</label>
 		<div class="toggle-menu-content container">
 			<slot/>
 		</div>
 	</div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
 export default defineComponent({
-	setup() {
-		const menuOpen = ref(false);
-		const toggleMenu = () => {
-			menuOpen.value = !menuOpen.value;
-		}
-		return {
-			menuOpen,
-			toggleMenu,
+	props: {
+		title: {
+			type: String,
+			default: 'toggle side menu'
 		}
 	}
 });
 </script>
+
+<style scoped>
+.toggle-menu-checkbox {
+	position: absolute;
+	top: -1em;
+	visibility: hidden;
+}
+</style>

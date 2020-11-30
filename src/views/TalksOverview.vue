@@ -2,8 +2,9 @@
 	<Suspense>
 		<template #default>
 			<main class="main box">
-				<side-menu>
-					<filters /> <!-- put this with talks-overview, not needed for all pages -->
+				<side-menu title="Show/Hide Filters">
+					<template v-slot:toggle-button-icon>☰</template>  <!-- pulled out of SideMenu.vue so we can add badges and things -->
+					<filters />
 				</side-menu>
 				<div class="main-area talks-overview container">
 					<!-- includes tabs for day selection and the grid separated by time slots -->

@@ -1,0 +1,54 @@
+#app {
+	height: 100vh;
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"sidebar main"
+		"footer footer";
+	grid-template-rows: 3.25rem 1fr 2rem;
+	grid-template-columns: auto 1fr;
+}
+
+.header {
+	grid-area: header;
+	display: grid;
+	grid-template: "logo search login nav lang" 3em / auto 1fr auto auto auto;
+	align-items: center;
+	justify-items: left;
+	grid-gap: 0.5rem;
+	.logo {
+		grid-area: logo;
+		height: 3rem;
+		img {
+			height: 100%;
+		}
+	}
+	.nav {
+		grid-area: nav;
+	}
+	.search {
+		grid-area: search;
+	}
+	.login-area {
+		grid-area: login;
+	}
+	.tabs:not(:last-child), .field:not(:last-child) {
+		margin-bottom: 0;
+	}
+}
+
+.main {
+	display: contents;
+}
+
+.main-area {
+	padding: 0.5rem;
+	grid-area: main;
+	overflow: auto;
+	max-height: calc(100vh - 5rem);
+}
+.footer {
+	grid-area: footer;
+	height: 2rem;
+	padding: 0;
+}
