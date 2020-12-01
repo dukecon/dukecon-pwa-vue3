@@ -1,0 +1,5 @@
+.language-select {
+	.button:focus, .button.is-focused {
+		color: findColorInvert($info) !important;
+	}
+}

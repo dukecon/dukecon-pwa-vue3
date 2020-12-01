@@ -2,23 +2,11 @@
 @import './layout/page';
 @import './layout/side-menu';
 @import './layout/navbar';
+@import './layout/language-select';
 @import './layout/talks';
 
 *, ::before, ::after {
 	box-sizing: border-box;
-}
-
-.header {
-	box-shadow: $boxShadowBottom;
-	z-index: 1;
-}
-
-.footer {
-	box-shadow: $boxShadowTop;
-}
-
-.side-menu {
-	box-shadow: $boxShadowLeft;
 }
 
 .has-background-transparent {

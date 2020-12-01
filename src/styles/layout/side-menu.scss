@@ -2,6 +2,7 @@
 	grid-area: sidebar;
 	position: relative;
 	width: 50px;
+	box-shadow: $boxShadowLeft;
 	transition: width 0.3s ease-in-out;
 	.toggle-menu-content {
 		position: absolute;

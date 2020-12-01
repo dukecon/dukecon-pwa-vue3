@@ -16,6 +16,8 @@
 	align-items: center;
 	justify-items: left;
 	grid-gap: 0.5rem;
+	box-shadow: $boxShadowBottom;
+	z-index: 1;
 	.logo {
 		grid-area: logo;
 		height: 3rem;
@@ -51,4 +53,5 @@
 	grid-area: footer;
 	height: 2rem;
 	padding: 0;
+	box-shadow: $boxShadowTop;
 }
