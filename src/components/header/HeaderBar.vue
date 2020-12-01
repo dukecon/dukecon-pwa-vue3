@@ -8,12 +8,12 @@
 		<nav-menu />
 	</header>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useStore } from 'vuex';
-import LoginArea from '@/components/header/LoginArea';
-import QuickSearch from '@/components/header/QuickSearch';
-import NavMenu from '@/components/header/NavMenu';
+import LoginArea from '@/components/header/LoginArea.vue';
+import QuickSearch from '@/components/header/QuickSearch.vue';
+import NavMenu from '@/components/header/NavMenu.vue';
 
 export default defineComponent({
 	components: {

@@ -1,3 +1,3 @@
 <template>
-	<div class="login-area">login</div>
+	<div class="login-area">{{$t('doLogin')}}</div>
 </template>

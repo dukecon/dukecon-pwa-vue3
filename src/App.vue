@@ -4,11 +4,11 @@
 	<footer-bar />
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useStore } from 'vuex';
-import HeaderBar from '@/components/header/HeaderBar';
-import FooterBar from '@/components/FooterBar';
+import HeaderBar from '@/components/header/HeaderBar.vue';
+import FooterBar from '@/components/FooterBar.vue';
 
 export default defineComponent({
 	components: {

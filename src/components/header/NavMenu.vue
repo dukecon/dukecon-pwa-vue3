@@ -14,15 +14,15 @@
 		</button>
 	</div>
 	<div :class="{'is-active': isOpen }" class="navbar-menu">
-		<router-link :class="{'is-active': $route.path==='/'}" to="/" class="navbar-item">Home</router-link>
-		<router-link :class="{'is-active': $route.path==='/about'}" to="/about" class="navbar-item">About</router-link>
+		<router-link :class="{'is-active': $route.path==='/'}" to="/" class="navbar-item">{{$t('talks')}}</router-link>
+		<router-link :class="{'is-active': $route.path==='/about'}" to="/about" class="navbar-item">{{$t('feedback')}}</router-link>
 		<language-select class="navbar-item" />
 	</div>
 </nav>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue';
-import LanguageSelect from '@/components/header/LanguageSelect';
+import LanguageSelect from '@/components/header/LanguageSelect.vue';
 
 export default defineComponent({
 	components: {

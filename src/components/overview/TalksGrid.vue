@@ -14,8 +14,7 @@ export default defineComponent({
 	components: {
 		TalkCard,
 	},
-	setup(props) {
-		console.log(props.events)
+	setup() {
 		return {
 
 		};
