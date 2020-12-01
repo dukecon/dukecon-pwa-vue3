@@ -1,12 +1,12 @@
 <template>
 	<input type=checkbox id="side-menu-toggle" class="toggle-menu-checkbox" />
 	<div class="side-menu">
-		<label for="side-menu-toggle" class="toggle-menu-button button is-pulled-right" :title="title">
-			<slot name="toggle-button-icon" />
-		</label>
 		<div class="toggle-menu-content container">
 			<slot/>
 		</div>
+		<label for="side-menu-toggle" class="toggle-menu-button button is-pulled-right" :title="title">
+			<slot name="toggle-button-icon" />
+		</label>
 	</div>
 </template>
 <script lang="ts">

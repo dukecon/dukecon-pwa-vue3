@@ -14,7 +14,7 @@ $white-ter: #eee !default;
 $custom-colors: ("highlight": ($highlight-dark, $highlight-light), "alternate": ($alternate-dark, $alternate-light));
 
 $colorBoxShadow: rgba(0,0,0,0.3);
-$boxShadowLeft: 4px 0px 3px -2px $colorBoxShadow;
+$boxShadow: 2px 2px 3px -1px $colorBoxShadow;
 $boxShadowTop:  0px -4px 3px -2px $colorBoxShadow;
 $boxShadowBottom:  0px 4px 3px -2px $colorBoxShadow;
 

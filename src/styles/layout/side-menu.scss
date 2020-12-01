@@ -1,24 +1,53 @@
+$side-menu-width: 270px !default;
+$side-menu-min-width: 30px;
+
 .side-menu {
 	grid-area: sidebar;
 	position: relative;
-	width: 50px;
-	box-shadow: $boxShadowLeft;
-	transition: width 0.3s ease-in-out;
-	.toggle-menu-content {
+	width: $side-menu-min-width;
+	.toggle-menu-button {
+		top: 0.25rem;
+		left: 0;
 		position: absolute;
-		top: 50px;
-		left: -250px;
+		transition: left 0.3s ease-in-out;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-left: none;
+		background: $scheme-main;
+		box-shadow: $boxShadow;
+	}
+	.toggle-menu-content {
+		width: $side-menu-width;
+		position: absolute;
+		top: 0;
+		left: -$side-menu-width;
 		right: 0;
 		transition: left 0.3s ease-in-out;
-		position: absolute;
-		padding-right: 50px;
+		padding: 1rem;
+		background: $scheme-main;
 	}
 }
 
 .toggle-menu-checkbox:checked ~ .side-menu {
-	width: 300px;
+	.toggle-menu-button {
+		left: $side-menu-width;
+	}
 	.toggle-menu-content {
 		left: 0;
-		visibility: visible;
+		box-shadow: $boxShadow;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.side-menu {
+		position: relative;
+		width: $side-menu-width;
+		.toggle-menu-button {
+			display: none;
+		}
+		.toggle-menu-content {
+			position: initial;
+			box-shadow: $boxShadow;
+		}
 	}
 }
