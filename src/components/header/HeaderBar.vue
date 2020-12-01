@@ -6,7 +6,6 @@
 		<quick-search />
 		<login-area :class="{ 'is-hidden' : !loginEnabled }" />
 		<nav-menu />
-		<language-select />
 	</header>
 </template>
 <script>
@@ -15,14 +14,12 @@ import { useStore } from 'vuex';
 import LoginArea from '@/components/header/LoginArea';
 import QuickSearch from '@/components/header/QuickSearch';
 import NavMenu from '@/components/header/NavMenu';
-import LanguageSelect from '@/components/header/LanguageSelect';
 
 export default defineComponent({
 	components: {
 		LoginArea,
 		QuickSearch,
 		NavMenu,
-		LanguageSelect,
 	},
 	setup() {
 		const store = useStore();

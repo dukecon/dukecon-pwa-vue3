@@ -1,6 +1,7 @@
 @import './_theme';
 @import './layout/page';
 @import './layout/side-menu';
+@import './layout/navbar';
 @import './layout/talks';
 
 *, ::before, ::after {
@@ -28,6 +29,6 @@
 	border: none !important;
 }
 
-*:focus 	{
-	outline: 2px solid inherit;	
+*:focus, *.is-focuesd {
+	outline: 2px solid $alternate !important;	
 }

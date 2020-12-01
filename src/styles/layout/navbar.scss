@@ -1,0 +1,25 @@
+.navbar {
+	.navbar-brand {
+		align-items: center;
+	}
+	.navbar-menu {
+		&.is-active {
+			position: absolute;
+			right: 0;
+			background-color: $primary;
+		}
+	}
+	.navbar-item {
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+	.button {
+		height: 2.5rem;
+	}
+	.button:focus, .button.is-focused {
+		color: inherit;
+	}
+	.button:active, .button.is-active {
+		color: inherit;
+	}
+}
