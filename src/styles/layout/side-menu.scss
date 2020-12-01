@@ -1,53 +1,53 @@
 $side-menu-width: 270px !default;
 $side-menu-min-width: 30px;
+$side-menu-transition: left 0.4s cubic-bezier(.68,-0.55,.27,1.55) !default;
 
 .side-menu {
 	grid-area: sidebar;
 	position: relative;
-	width: $side-menu-min-width;
+	width: $side-menu-width;
 	.toggle-menu-button {
-		top: 0.25rem;
-		left: 0;
-		position: absolute;
-		transition: left 0.3s ease-in-out;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		border-left: none;
-		background: $scheme-main;
-		box-shadow: $boxShadow;
+		display: none;
 	}
 	.toggle-menu-content {
-		width: $side-menu-width;
-		position: absolute;
-		top: 0;
-		left: -$side-menu-width;
-		right: 0;
-		transition: left 0.3s ease-in-out;
 		padding: 1rem;
-		background: $scheme-main;
-	}
-}
-
-.toggle-menu-checkbox:checked ~ .side-menu {
-	.toggle-menu-button {
-		left: $side-menu-width;
-	}
-	.toggle-menu-content {
-		left: 0;
+		position: initial;
 		box-shadow: $boxShadow;
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
 	.side-menu {
-		position: relative;
-		width: $side-menu-width;
+		width: $side-menu-min-width;
 		.toggle-menu-button {
-			display: none;
+			display: block;
+			top: 0.25rem;
+			left: 0;
+			position: absolute;
+			transition: $side-menu-transition;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			border-left: none;
+			background: $scheme-main;
+			box-shadow: $boxShadow;
 		}
 		.toggle-menu-content {
-			position: initial;
-			box-shadow: $boxShadow;
+			width: $side-menu-width; 
+			position: absolute;
+			top: 0;
+			left: -$side-menu-width;
+			right: 0;
+			transition: $side-menu-transition;
+			background: $scheme-main;
+		}
+	}
+	
+	.toggle-menu-checkbox:checked ~ .side-menu {
+		.toggle-menu-button {
+			left: $side-menu-width;
+		}
+		.toggle-menu-content {
+			left: 0;
 		}
 	}
 }

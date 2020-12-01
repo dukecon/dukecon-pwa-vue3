@@ -1,0 +1,40 @@
+$navbar-transition: max-height 0.5s cubic-bezier(.86,0,.07,1) !default;
+$navbar-max-height: 200px;
+
+.navbar {
+	font-size: 1.2rem;
+	.navbar-brand {
+		align-items: center;
+	}
+	.navbar-item {
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+	.button {
+		height: 2.5rem;
+	}
+	.button:focus, .button.is-focused {
+		color: inherit;
+	}
+	.button:active, .button.is-active {
+		color: inherit;
+	}
+}
+
+@media screen and (max-width: 1023px) {
+	.navbar-menu {
+		display: block;
+		max-height: 0;
+		height: 0;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		transition: $navbar-transition;
+		padding: 0;
+		&.is-active {
+			height: auto;
+			background-color: $primary;
+			max-height: $navbar-max-height;
+		}
+	}
+}
