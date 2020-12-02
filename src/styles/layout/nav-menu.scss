@@ -3,6 +3,9 @@ $navbar-max-height: 200px;
 
 .navbar {
 	font-size: 1.2rem;
+	.navbar-menu {
+		gap: 2px;
+	}
 	.navbar-brand {
 		align-items: center;
 	}
@@ -23,14 +26,15 @@ $navbar-max-height: 200px;
 
 @media screen and (max-width: 1023px) {
 	.navbar-menu {
+		padding: 0 2px;
 		display: block;
 		max-height: 0;
 		height: 0;
-		overflow: hidden;
 		position: absolute;
+		overflow: hidden;
+		top: 2.75em;
 		right: 0;
 		transition: $navbar-transition;
-		padding: 0;
 		&.is-active {
 			height: auto;
 			background-color: $primary;
