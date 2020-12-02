@@ -38,3 +38,9 @@ body {
 		}
 	}
 }
+
+@media screen and (prefers-reduced-motion: reduce) { 
+	*, ::before, ::after {
+		transition: none !important;
+	}
+}
