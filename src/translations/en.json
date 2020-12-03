@@ -11,7 +11,7 @@
 	"emptyConference": "No talks scheduled for this conference yet.",
 	"favoriteAlertBody": "Favourites are used for room capacity planning.<br>They are only synchronized with the server and your other devices once you log in. <br><br>Click the lock symbol at the top to do so, please.",
 	"favoriteAlertTitle": "Favourites",
-	"feedback_content": "<span>Please send any feedback about the Conference Planner website via mail to</span> <a href=\"mailto:feedback&commat;dukecon.org\">feedback&commat;dukecon.org</a> <span>or</span> <a href=\"https://github.com/dukecon/dukecon/issues\" title=\"Isssuetracker\">create a ticket here</a> <span>!</span>",
+	"feedback_content": "<span>Please send any feedback about the Conference Planner website via mail to</span> <a href=\"mailto:feedback&commat;dukecon.org\">feedback&commat;dukecon.org</a> <span>or</span> <external-link \" href=\"https://github.com/dukecon/dukecon/issues\" title=\"Issue tracker\">create a ticket here!</external-link>",
 	"feedback.cancel": "Cancel",
 	"feedback.header": "How did you like this talk?",
 	"feedback.loginMessage": "Log in to leave feedback",

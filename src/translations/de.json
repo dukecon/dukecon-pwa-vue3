@@ -11,7 +11,7 @@
 	"emptyConference": "Talks für diese Konferenz stehen noch nicht fest.",
 	"favoriteAlertBody": "Favoriten zu setzen verbessert unsere Raumplanung.<br>Allerdings werden diese erst auf den Server und Eure anderen Geräte synchronisiert, wenn Ihr Euch einloggt bzw. registriert. <br><br>Klickt dazu bitte auf das Schloss-Symbol oben.",
 	"favoriteAlertTitle": "Favoriten",
-	"feedback_content": "<span>Rückmeldungen zur Conference Planner Webseite bitte per Mail an</span> <a href=\"mailto:feedback&commat;dukecon.org\" title=\"email\">feedback&commat;dukecon.org</a> <span>oder direkt</span> <a href=\"https://github.com/dukecon/dukecon/issues\" title=\"Isssuetracker\">hier</a> <span>ein Ticket erfassen!</span>",
+	"feedback_content": "<span>Rückmeldungen zur Conference Planner Webseite bitte per Mail an</span> <a href=\"mailto:feedback&commat;dukecon.org\" title=\"email\">feedback&commat;dukecon.org</a> <span>oder direkt</span> <external-link href=\"https://github.com/dukecon/dukecon/issues\" title=\"Issuetracker\">hier</external-link> <span>ein Ticket erfassen!</span>",
 	"feedback.cancel": "Abbrechen",
 	"feedback.header": "Wie hat dir dieser Talk gefallen?",
 	"feedback.loginMessage": "Bitte log dich ein, um Feedback zu geben.",

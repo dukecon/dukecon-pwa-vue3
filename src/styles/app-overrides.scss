@@ -6,6 +6,14 @@
 @import './layout/talks';
 @import './layout/badge';
 
+::part(anchor) {
+	color: $link;
+	text-decoration: none;
+	&:hover {
+		color: $link-hover;
+	}
+}
+
 *, ::before, ::after {
 	box-sizing: border-box;
 }

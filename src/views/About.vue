@@ -1,6 +1,6 @@
 <template>
   <div class="main-area about">
-    <h1 class="title is-1">Powered by Dukecon</h1>
+    <h1 class="title is-1">Powered by <external-link href="http://www.dukecon.org">DukeCon</external-link></h1>
 	<div v-html="$t('feedback_content')">
 	</div>
 	<img alt="" src="@/assets/logo_dukecon.png">
