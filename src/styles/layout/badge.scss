@@ -1,0 +1,41 @@
+$badgeBackgroundColor: $highlight !default;
+$badgeColor: findColorInvert($badgeBackgroundColor) !default;
+$badgeOffsetTop: -5px !default;
+$badgeOffsetBottom: 0 !default;
+$badgeOffsetHorizontal: -15px !default;
+$badgeHeight: 1.1rem !default;
+$badgeFontSize: 0.75rem;
+$badgeLineHeight: 1rem;
+
+.has-badge {
+	position: relative;
+	.badge {
+		display: inline-block;
+		position: absolute;
+		color: $badgeColor;
+		font-weight: bold;
+		background-color: $badgeBackgroundColor;
+		border: 1px solid $badgeColor;
+		border-radius: 100%;
+		line-height: $badgeLineHeight;
+		height: $badgeHeight;
+		width: $badgeHeight;
+		font-size: $badgeFontSize;
+		&.is-right {
+			right: $badgeOffsetHorizontal;
+		}
+		&.is-left {
+			left: $badgeOffsetHorizontal;
+		}
+		&.is-right-center {
+			right: -1rem;
+			top: 0.5rem;
+		}
+		&.is-top {
+			top: $badgeOffsetTop;
+		}
+		&.is-bottom {
+			bottom: $badgeOffsetBottom;
+		}
+	}
+}

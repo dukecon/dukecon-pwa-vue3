@@ -4,7 +4,7 @@
 			<main class="main box">
 				<side-menu title="Show/Hide Filters">
 					<template v-slot:toggle-button-icon>
-						<filter-menu-button />
+						<filter-menu-button :only-favorites="false" :filter-count="0"/>
 					</template>  <!-- pulled out of SideMenu.vue so we can add badges and things -->
 					<filter-menu :filters="filters"/>
 				</side-menu>

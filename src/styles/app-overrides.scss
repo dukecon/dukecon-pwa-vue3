@@ -4,6 +4,7 @@
 @import './layout/nav-menu';
 @import './layout/language-select';
 @import './layout/talks';
+@import './layout/badge';
 
 *, ::before, ::after {
 	box-sizing: border-box;
@@ -31,11 +32,11 @@ body {
 	background: white;
 	width: auto;
 	height: auto;
-	img {
-		transition: opacity 0.2s ease-in;
-		&:hover {
-			opacity: 0.7;
-		}
+}
+.is-button-image {
+	transition: opacity 0.2s ease-in;
+	&:hover {
+		opacity: 0.7;
 	}
 }
 
