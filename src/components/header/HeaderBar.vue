@@ -1,7 +1,7 @@
 <template>
 	<header class="header has-background-primary has-text-white">
 		<div class="logo">
-			<img alt="" src="@/assets/logo.png">
+			<img alt="" src="@/assets/logo_dukecon_on_white.png">
 		</div>
 		<quick-search />
 		<login-area :class="{ 'is-hidden' : !loginEnabled }" />

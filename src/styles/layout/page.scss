@@ -1,3 +1,6 @@
+$headerHeight: 3.25rem !default;
+$footerHeight: 2em !default;
+
 #app {
 	height: 100vh;
 	display: grid;
@@ -5,14 +8,14 @@
 		"header header"
 		"sidebar main"
 		"footer footer";
-	grid-template-rows: 3.25rem 1fr 2rem;
+	grid-template-rows: $headerHeight 1fr $footerHeight;
 	grid-template-columns: auto 1fr;
 }
 
 .header {
 	grid-area: header;
 	display: grid;
-	grid-template: "logo search login nav lang" 3em / auto 1fr auto auto auto;
+	grid-template: "logo search login nav lang" auto / auto 1fr auto auto auto;
 	align-items: center;
 	justify-items: left;
 	grid-gap: 0.5rem;
@@ -20,9 +23,12 @@
 	z-index: 1;
 	.logo {
 		grid-area: logo;
-		height: 3rem;
+		display: grid;
+		align-items: center;
+		height: $headerHeight;
 		img {
-			height: 100%;
+			margin-left: 2px;
+			height: 3em;
 		}
 	}
 	.nav {

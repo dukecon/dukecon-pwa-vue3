@@ -1,8 +1,8 @@
 <template>
 	<div class="language-select">
 		<button class="button is-image-button" :title="$t('language.select')" @click="toggle()">
-			<img v-if="locale === 'de'" class="is-button-image" src="@/images/de.png" alt=""/>
-			<img v-if="locale === 'en'" class="is-button-image" src="@/images/en.png" alt=""/>
+			<img v-if="locale === 'de'" class="is-button-image" src="@/assets/de.png" alt=""/>
+			<img v-if="locale === 'en'" class="is-button-image" src="@/assets/en.png" alt=""/>
 		</button>
 	</div>
 </template>

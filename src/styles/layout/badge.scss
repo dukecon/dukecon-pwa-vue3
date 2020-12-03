@@ -4,8 +4,8 @@ $badgeOffsetTop: -5px !default;
 $badgeOffsetBottom: 0 !default;
 $badgeOffsetHorizontal: -15px !default;
 $badgeHeight: 1.1rem !default;
-$badgeFontSize: 0.75rem;
-$badgeLineHeight: 1rem;
+$badgeFontSize: 0.75rem !default;
+$badgeLineHeight: 1rem !default;
 
 .has-badge {
 	position: relative;
