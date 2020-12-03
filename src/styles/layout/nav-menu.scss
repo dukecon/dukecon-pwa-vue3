@@ -1,5 +1,5 @@
-$navbar-transition: max-height 0.5s cubic-bezier(.86,0,.07,1) !default;
-$navbar-max-height: 200px;
+$navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
+// $navbar-max-height: 200px;
 
 .navbar {
 	font-size: 1.2rem;
@@ -26,19 +26,18 @@ $navbar-max-height: 200px;
 
 @media screen and (max-width: 1023px) {
 	.navbar-menu {
+		clip-path: inset(0 0 100% 0);
+
 		padding: 0 2px;
 		display: block;
-		max-height: 0;
-		height: 0;
 		position: absolute;
-		overflow: hidden;
 		top: 2.75em;
 		right: 0;
 		transition: $navbar-transition;
+		background-color: $primary;
+		box-shadow: $boxShadow;
 		&.is-active {
-			height: auto;
-			background-color: $primary;
-			max-height: $navbar-max-height;
+			clip-path: inset(0 0 0 0);
 		}
 	}
 }
