@@ -27,7 +27,7 @@ export class ExternalLink extends HTMLElement {
 
 	generateContent() {
 		const props = {
-			part: 'anchor',
+			part: 'anchor', // can be accessed from direct parent stylesheet with ::part('anchor') - selector
 			href: this.getAttribute('href'),
 			title: this.getAttribute('title') || 'external link',
 			target: '_blank',
