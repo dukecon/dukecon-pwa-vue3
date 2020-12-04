@@ -8,10 +8,3 @@
 	<img alt="" src="@/assets/logo_dukecon.png">
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue';
-export default defineComponent({
-	setup() {
-	}
-});
-</script>

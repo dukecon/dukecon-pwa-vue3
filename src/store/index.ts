@@ -43,6 +43,7 @@ export const store = createStore({
 			state.homeUrl = conferences.homeUrl;
 			state.events = conferences.events.sort(sortByDate);
 			state.speakers = conferences.speakers;
+			state.eventTypes = conferences.eventTypes;
 			// TODO ...
 		}
 	},
