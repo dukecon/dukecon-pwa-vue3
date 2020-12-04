@@ -18,14 +18,13 @@ $footerHeight: 2em !default;
 	grid-template: "logo search login nav lang" auto / auto 1fr auto auto auto;
 	align-items: center;
 	justify-items: left;
-	grid-gap: 0.5rem;
+	gap: 0.5rem;
 	box-shadow: $boxShadowBottom;
 	z-index: 1;
 	.logo {
 		grid-area: logo;
 		display: grid;
 		align-items: center;
-		height: $headerHeight;
 		img {
 			margin-left: 2px;
 			height: 3em;
@@ -54,6 +53,22 @@ $footerHeight: 2em !default;
 	grid-area: main;
 	overflow: auto;
 	max-height: calc(100vh - 5rem);
+	&.about {
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 1rem;
+		display: grid;
+		grid-template-rows: auto auto 1fr;
+		grid-gap: 1rem;
+		align-items: center;
+		justify-items: center;
+		img {
+			object-fit: cover;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
 }
 .footer {
 	grid-area: footer;

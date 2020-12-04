@@ -1,7 +1,9 @@
 <template>
   <div class="main-area about">
-    <h1 class="title is-1">Powered by <external-link href="http://www.dukecon.org">DukeCon</external-link></h1>
-	<div v-html="$t('feedback_content')">
+    <h1 class="title is-1">
+		Powered by <external-link href="http://www.dukecon.org">DukeCon</external-link>
+	</h1>
+	<div class="has-text-centered" v-html="$t('feedback_content')">
 	</div>
 	<img alt="" src="@/assets/logo_dukecon.png">
   </div>
@@ -13,18 +15,3 @@ export default defineComponent({
 	}
 });
 </script>
-<style lang="scss" scoped>
-	.about {
-		padding: 1rem;
-		display: grid;
-		grid-template-rows: auto auto 1fr;
-		grid-gap: 1rem;
-		align-items: center;
-		justify-items: center;
-		img {
-			object-fit: cover;
-			max-height: 100%;
-			max-width: 100%;
-		}
-	}
-</style>
