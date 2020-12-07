@@ -1,68 +1,32 @@
 import { createStore } from "vuex";
+import type { MetaData } from '@/types';
 import { loadConferenceData, loadMetadata } from '@/utils/api';
-import { eventMatches } from '@/utils/filter';
-import type { Talk, MetaData } from '@/types';
+import { MetaDataState, mutations as metaDataMutations } from './metaData';
+import { ConferenceData, getters as conferenceDataGetters, mutations as conferenceDataMutations } from './conferenceData';
+import { FilterData } from './filterData';
 
-const defaultTitle = 'DukeCon Vue 3';
-const defaultUrl = 'http://www.dukecon.org'
-
-const sortByDate = (a: Talk, b: Talk) : number => a.start.localeCompare(b.start);
+const State = () => ({
+	loaded: false,
+	searchString: '',
+	filters: FilterData(),
+	metaData: MetaDataState(),
+	...ConferenceData(),
+})
 
 export const Store = () => createStore({
 	strict: true,
-	state: {
-		loaded: false,
-		searchString: '',
-		filters: {},
-		metaData: {
-			id: '',
-			name: '',
-			url: '',
-			homeUrl: '',
-			homeTitle: '',
-			authEnabled: true,
-			termsOfUse: {},
-			imprint: {},
-			privacy: {},
-		},
-		events: [],
-		locations: [],
-		tracks: [],
-		speakers: [],
-		audiences: [],
-		eventTypes: [],
-
-	},
+	state: State(),
 	getters: {
-		filteredBySearchstring: ({ searchString, events }) => {
-			return searchString?.length > 2 ?
-				events.filter(eventMatches(searchString)) :
-				events;
-		}
+		...conferenceDataGetters,
 	},
 	mutations: {
-		initialize: (state, metaData: MetaData) => {
-			state.loaded = false;
-			state.metaData.id = metaData.id;
-			state.metaData.name = metaData.name || defaultTitle;
-			state.metaData.url = metaData.url || defaultUrl;
-			state.metaData.homeUrl = metaData.homeUrl || '';
-			state.metaData.homeTitle = metaData.homeTitle || '';
-			state.metaData.imprint = metaData.imprint;
-		},
-		setSearchString: (state, newValue) => {
+		...metaDataMutations,
+		...conferenceDataMutations,
+		setSearchString: (state, newValue: string) => {
 			state.searchString = newValue;
 		},
-		updateConferences: (state, conferences) => {
-			state.metaData.name = conferences.name;
-			state.metaData.url = conferences.url;
-			state.metaData.homeUrl = conferences.homeUrl;
-			state.events = conferences.events.sort(sortByDate);
-			state.speakers = conferences.speakers;
-			state.eventTypes = conferences.eventTypes;
-			console.log('Conference updated')
-			// TODO ...
-			state.loaded = true;
+		setLoadedState: (state, newValue: boolean) => {
+			state.loaded = newValue;
 		}
 	},
 	actions: {
@@ -71,13 +35,15 @@ export const Store = () => createStore({
 		},
 		load: async ({ commit, state }) => {
 			// later: etag, localstore, etc
+			commit('setLoadedState', false);
 			const metaData: MetaData = await loadMetadata();
 			commit('initialize', metaData);
 			const conferences = await loadConferenceData(state.metaData.id);
 			commit('updateConferences', conferences);
-
+			commit('setLoadedState', true);
 		}
 	},
 	modules: {}
 });
 export type store = ReturnType<typeof Store>;
+export type state = ReturnType<typeof State>;
