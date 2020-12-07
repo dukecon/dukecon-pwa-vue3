@@ -13,12 +13,12 @@ a {
 	margin: 0 0 0 0.15em;
 }`;
 
-const defaultProps = {
+const defaultProps: Partial<Record<string, string>> = {
 	part: 'anchor', // can be accessed from direct parent stylesheet with ::part('anchor') - selector
 	title: 'external link',
 	target: '_blank',
 	rel: 'noopener noreferrer',
-}
+};
 
 const constAttributes = ['id', 'class', 'className', 'style'];
 
@@ -35,34 +35,36 @@ export class ExternalLink extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 	}
 
-	mutationHandler = (mutationsList: any) => {
-		const mutations = mutationsList.filter((mutation: any) => mutation.type === 'attributes');
+	#mutationHandler: MutationCallback = mutationsList => {
+		const mutations = mutationsList.filter(mutation => mutation.type === 'attributes');
 		const anchorElem = this.shadowRoot?.querySelector('a');
-		if (mutations?.length > 0 && anchorElem) {
-			mutations.forEach((mutation: any) => {
-				if (!constAttributes.includes(mutation.attributeName)) {
-					const newValue = this.getAttribute(mutation.attributeName) || (defaultProps as any)[mutation.attributeName];
-					if (newValue) {
-						anchorElem.setAttribute(mutation.attributeName, newValue);
-					} else {
-						anchorElem.removeAttribute(mutation.attributeName);
-					}
-				}
-			});
+
+		if (!anchorElem)
+			return;
+			
+		for (const mutation of mutations) {
+			const attributeName = mutation.attributeName!;
+			if (constAttributes.includes(attributeName))
+				break;
+
+			const newValue = this.getAttribute(attributeName) ?? defaultProps[attributeName];
+			if (newValue !== undefined) {
+				anchorElem.setAttribute(attributeName, newValue);
+			} else {
+				anchorElem.removeAttribute(attributeName);
+			}
 		}
 	}
 
-	mutationCallback = this.mutationHandler.bind(this);
-
-	observer = new MutationObserver(this.mutationCallback);
+	observer = new MutationObserver(this.#mutationHandler);
 
 	generateProps() {
 		const props:Record<string, any> = {};
-		this.getAttributeNames().forEach((name) => {
+		for (const name of this.getAttributeNames()) {
 			if (!constAttributes.includes(name)) {
 				props[name] = this.getAttribute(name);
 			}
-		});
+		}
 		return { ...defaultProps, ...props };
 	}
 
@@ -78,7 +80,7 @@ export class ExternalLink extends HTMLElement {
 		console.log("ExternalLink registered");
 		this.shadowRoot!.appendChild(this.generateCss());
 		this.shadowRoot!.appendChild(this.generateContent());
-		this.observer.observe(this, {attributes: true, childList: false, subtree: false})
+		this.observer.observe(this, { attributes: true, childList: false, subtree: false })
 	}
 
 	disconnectedCallback() {
