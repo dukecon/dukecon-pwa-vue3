@@ -1,20 +1,30 @@
 import { createStore } from "vuex";
 import { loadConferenceData, loadMetadata } from '@/utils/api';
 import { eventMatches } from '@/utils/filter';
-import type { Talk } from '@/types';
+import type { Talk, MetaData } from '@/types';
+
+const defaultTitle = 'DukeCon Vue 3';
+const defaultUrl = 'http://www.dukecon.org'
 
 const sortByDate = (a: Talk, b: Talk) : number => a.start.localeCompare(b.start);
 
-export const store = createStore({
+export const Store = () => createStore({
 	strict: true,
 	state: {
+		loaded: false,
 		searchString: '',
 		filters: {},
-		id: "javaland2019",
-		name: "New Vue3",
-		url: "http://www.dukecon.org",
-		homeUrl: "http://www.javaland.eu",
-		loginEnabled: true,
+		metaData: {
+			id: '',
+			name: '',
+			url: '',
+			homeUrl: '',
+			homeTitle: '',
+			authEnabled: true,
+			termsOfUse: {},
+			imprint: {},
+			privacy: {},
+		},
 		events: [],
 		locations: [],
 		tracks: [],
@@ -31,35 +41,43 @@ export const store = createStore({
 		}
 	},
 	mutations: {
-		initialize: (state, metaData) => {
-			state.id = metaData.id;
+		initialize: (state, metaData: MetaData) => {
+			state.loaded = false;
+			state.metaData.id = metaData.id;
+			state.metaData.name = metaData.name || defaultTitle;
+			state.metaData.url = metaData.url || defaultUrl;
+			state.metaData.homeUrl = metaData.homeUrl || '';
+			state.metaData.homeTitle = metaData.homeTitle || '';
+			state.metaData.imprint = metaData.imprint;
 		},
 		setSearchString: (state, newValue) => {
 			state.searchString = newValue;
 		},
 		updateConferences: (state, conferences) => {
-			state.name = conferences.name;
-			state.url = conferences.url;
-			state.homeUrl = conferences.homeUrl;
+			state.metaData.name = conferences.name;
+			state.metaData.url = conferences.url;
+			state.metaData.homeUrl = conferences.homeUrl;
 			state.events = conferences.events.sort(sortByDate);
 			state.speakers = conferences.speakers;
 			state.eventTypes = conferences.eventTypes;
+			console.log('Conference updated')
 			// TODO ...
+			state.loaded = true;
 		}
 	},
 	actions: {
-		init: async({ commit }) => {
-			const result = await loadMetadata();
-			commit('initialize', result);
-		},
 		setSearchString: ({ commit }, newValue) => {
 			commit('setSearchString', newValue);
 		},
 		load: async ({ commit, state }) => {
-			const result = await loadConferenceData(state.id);
-			commit('updateConferences', result);
+			// later: etag, localstore, etc
+			const metaData: MetaData = await loadMetadata();
+			commit('initialize', metaData);
+			const conferences = await loadConferenceData(state.metaData.id);
+			commit('updateConferences', conferences);
+
 		}
 	},
 	modules: {}
 });
-export type store = typeof store;
+export type store = ReturnType<typeof Store>;

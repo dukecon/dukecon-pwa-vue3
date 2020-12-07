@@ -1,4 +1,5 @@
 export type Translation = Record<string, string>
+export type TranslationLinks = Translation;
 
 export interface NamedOrderedItem {
 	id: Id;
@@ -8,6 +9,21 @@ export interface NamedOrderedItem {
 }
 
 export type Id = string;
+
+export interface MetaData {
+	id: Id;
+	name: string;
+	year: string;
+	url: string;
+	homeUrl?: string;
+	homeTitle?: string;
+	imprint: TranslationLinks;
+	termsOfUse: TranslationLinks;
+	privacy: TranslationLinks;
+	startDate: string;
+	endDate: string;
+	[key: string]: any;
+}
 
 export interface Talk {
 	id: Id;
@@ -37,6 +53,6 @@ export interface Language extends NamedOrderedItem {
 	code: string;
 }
 
-export interface Audience extends NamedOrderedItem {}
-export interface EventType extends NamedOrderedItem {}
-export interface Track extends NamedOrderedItem {}
+export type Audience = NamedOrderedItem;
+export type EventType = NamedOrderedItem;
+export type Track = NamedOrderedItem;

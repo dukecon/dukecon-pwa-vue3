@@ -77,7 +77,6 @@ export class ExternalLink extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log("ExternalLink registered");
 		this.shadowRoot!.appendChild(this.generateCss());
 		this.shadowRoot!.appendChild(this.generateContent());
 		this.observer.observe(this, { attributes: true, childList: false, subtree: false })

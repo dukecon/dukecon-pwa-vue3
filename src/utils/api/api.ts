@@ -1,5 +1,6 @@
-const baseGetUrl = "/rest/conferences/";
-const postUrl = "/json.php?";
+const baseGetUrl = '/rest/';
+const conferencesUrl = 'conferences/';
+const postUrl = '/json.php?';
 
 const postResultHandler = (result: any) => {
 	if (result.status === 200) {
@@ -10,7 +11,7 @@ const postResultHandler = (result: any) => {
 }
 
 const fetchJson = (relativePath: string) => {
-	console.log('getting data from server...');
+	console.log(`getting data from ${relativePath}...`);
 	return fetch(baseGetUrl + relativePath)
 			.then((response) => response.json())
 			.then((json) => json);
@@ -31,12 +32,12 @@ const writeJson = async (data: any, queryString = '') => {
 };
 
 export const saveHorses = async (data: any, queryString = '') => {
-	console.log(`Write ${data?.length} horses`);
+	console.log(`Write ${data?.length} entries`);
 	await writeJson(data, queryString);
 };
 
 export const loadConferenceData = async (conferenceId: string) => {
-	return fetchJson(conferenceId + '.json');
+	return fetchJson(conferencesUrl + conferenceId + '.json');
 };
 
 export const loadMetadata = async () => {

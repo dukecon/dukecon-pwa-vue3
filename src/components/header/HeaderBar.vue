@@ -23,8 +23,7 @@ export default defineComponent({
 	},
 	setup() {
 		const store = useStore();
-		store.dispatch('load');
-		const loginEnabled = ref(store.state.loginEnabled);
+		const loginEnabled = ref(store.state.metaData.authEnabled);
 		return {
 			loginEnabled,
 		}

@@ -1,26 +1,16 @@
 <template>
-	<Suspense>
-		<template #default>
-			<main class="main box">
-				<side-menu title="Show/Hide Filters">
-					<template v-slot:toggle-button-icon>
-						<filter-menu-button :only-favorites="false" :filter-count="0"/>
-					</template>  <!-- pulled out of SideMenu.vue so we can add badges and things -->
-					<filter-menu :filters="filters"/>
-				</side-menu>
-				<div class="main-area talks-overview container">
-					<!-- includes tabs for day selection and the grid separated by time slots -->
-					<talks-grid :events="events"/>
-				</div>
-			</main>
-		</template>
-		<template #fallback>
-			<main class="main box">
-				<div class="side-menu">&nbsp;</div>
-				<div class="is-loading">&nbsp;</div>
-			</main>
-		</template>
-	</Suspense>
+	<main class="main box">
+		<side-menu title="Show/Hide Filters">
+			<template v-slot:toggle-button-icon>
+				<filter-menu-button :only-favorites="false" :filter-count="0"/>
+			</template>  <!-- pulled out of SideMenu.vue so we can add badges and things -->
+			<filter-menu :filters="filters"/>
+		</side-menu>
+		<div class="main-area talks-overview container">
+			<!-- includes tabs for day selection and the grid separated by time slots -->
+			<talks-grid :events="events"/>
+		</div>
+	</main>
 </template>
 
 <script lang="ts">

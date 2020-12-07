@@ -1,11 +1,14 @@
 <template>
 	<header-bar />
-	<router-view />
+	<main v-if="!loaded" class="main-area is-loading">
+		<div title="loading" class="loader"></div>
+	</main>
+	<router-view v-else />
 	<footer-bar />
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
 import HeaderBar from '@/components/header/HeaderBar.vue';
 import FooterBar from '@/components/FooterBar.vue';
@@ -17,11 +20,11 @@ export default defineComponent({
 	},
 	setup() {
 		const store = useStore();
-		store.dispatch('load');
-		const loginEnabled = ref(store.state.loginEnabled);
+		const loaded = computed(() => store.state.loaded);
 		return {
-			loginEnabled,
+			loaded
 		}
+
 	}
 });
 </script>
