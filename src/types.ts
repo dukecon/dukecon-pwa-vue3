@@ -1,3 +1,5 @@
+export type { store, state } from '@/store'
+
 export type Translation = Record<string, string>
 export type TranslationLinks = Translation;
 
