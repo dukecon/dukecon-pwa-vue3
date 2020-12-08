@@ -2,18 +2,20 @@ $headerHeight: 3.25rem !default;
 $footerHeight: 2em !default;
 
 #app {
-	height: 100vh;
+	min-height: 100vh;
 	display: grid;
 	grid-template-areas:
 		"header header"
 		"sidebar main"
 		"footer footer";
-	grid-template-rows: $headerHeight 1fr $footerHeight;
+	grid-template-rows: $headerHeight auto $footerHeight;
 	grid-template-columns: auto 1fr;
 }
 
 .header {
 	grid-area: header;
+	position: sticky;
+	top: 0;
 	display: grid;
 	grid-template: "logo search login nav lang" auto / auto 1fr auto auto auto;
 	align-items: center;
@@ -52,7 +54,7 @@ $footerHeight: 2em !default;
 	padding: 0.5rem;
 	grid-area: main;
 	overflow: auto;
-	max-height: calc(100vh - 5rem);
+	//max-height: calc(100vh - 5rem);
 	&.is-loading {
 		display: grid; 
 		width: 100%;
@@ -81,6 +83,8 @@ $footerHeight: 2em !default;
 }
 .footer {
 	grid-area: footer;
+	position: sticky;
+	bottom: 0;
 	height: 2rem;
 	padding: 0;
 	box-shadow: $boxShadowTop;
