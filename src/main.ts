@@ -22,6 +22,7 @@ createApp(App)
 function I18n() {
 	return createI18n({
 		legacy: false,
+		globalInjection: true,
 		locale: 'de',
 		messages: {	de,	en }
 	});
