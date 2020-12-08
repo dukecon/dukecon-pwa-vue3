@@ -51,14 +51,13 @@ $side-menu-transition: left 0.4s cubic-bezier(.68,-0.55,.27,1.55) !default;
 			transition: $side-menu-transition;
 			background: $scheme-main;
 		}
-	}
-	
-	.toggle-menu-checkbox:checked ~ .side-menu {
-		.toggle-menu-button {
-			left: $side-menu-width;
-		}
-		.toggle-menu-content {
-			left: 0;
+		&.is-open {
+			.toggle-menu-button {
+				left: $side-menu-width;
+			}
+			.toggle-menu-content {
+				left: 0;
+			}
 		}
 	}
 }

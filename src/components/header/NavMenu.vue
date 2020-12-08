@@ -1,12 +1,12 @@
 <template>
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation" @keyup.esc="close()">
 	<div class="navbar-brand">
 		<button
 			:class="{'is-active': isOpen }"
 			role="button"
 			class="navbar-burger button has-background-transparent is-borderless"
 			aria-label="menu"
-			aria-expanded="false"
+			:aria-expanded="isOpen"
 			@click="toggle()">
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
@@ -33,10 +33,14 @@ export default defineComponent({
 		const toggle = () =>  {
 			isOpen.value = !isOpen.value
 		};
+		const close = () =>  {
+			isOpen.value = false;
+		};
 
 		return {
 			isOpen,
 			toggle,
+			close,
 		}
 	}
 });

@@ -27,7 +27,6 @@ $navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
 @media screen and (max-width: 1023px) {
 	.navbar-menu {
 		clip-path: inset(0 0 100% 0);
-
 		padding: 0 2px;
 		display: block;
 		position: absolute;
@@ -36,8 +35,16 @@ $navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
 		transition: $navbar-transition;
 		background-color: $primary;
 		box-shadow: $boxShadow;
+		& > * {
+			visibility: hidden;
+			transition-delay: 0.5s;
+		}
 		&.is-active {
 			clip-path: inset(0 0 0 0);
+			* {
+				visibility: visible;
+				transition-delay: 0s;
+			}
 		}
 	}
 }
