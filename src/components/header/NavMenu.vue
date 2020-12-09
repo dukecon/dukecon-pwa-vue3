@@ -16,12 +16,15 @@
 	<div :class="{'is-active': isOpen }" class="navbar-menu">
 		<router-link :class="{'is-active': $route.path==='/'}" to="/" class="navbar-item">{{$t('talks')}}</router-link>
 		<router-link :class="{'is-active': $route.path==='/about'}" to="/about" class="navbar-item">{{$t('feedback')}}</router-link>
+		<external-link v-if="homepageUrl" :href="homepageUrl" className="navbar-item" >{{homepageTitle}}</external-link>
 		<language-select class="navbar-item" />
 	</div>
 </nav>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
+import { useStore } from 'vuex';
+import type { state as State } from '@/types';
 import LanguageSelect from '@/components/header/LanguageSelect.vue';
 
 export default defineComponent({
@@ -29,6 +32,10 @@ export default defineComponent({
 		LanguageSelect,
 	},
 	setup() {
+		const state: State = useStore().state;
+		const homepageTitle = computed(() => state.metaData.name || state.metaData.homeTitle || 'Homepage');
+		const homepageUrl = computed(() => state.metaData.homeUrl ?? null);
+
 		const isOpen = ref(false);
 		const toggle = () =>  {
 			isOpen.value = !isOpen.value
@@ -41,6 +48,8 @@ export default defineComponent({
 			isOpen,
 			toggle,
 			close,
+			homepageTitle,
+			homepageUrl,
 		}
 	}
 });

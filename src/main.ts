@@ -4,8 +4,8 @@ import App from './App.vue'
 import { ExternalLink } from '@/components/webcomponent/ExternalLink.ts'
 import './registerServiceWorker'
 import router from './router'
-import { Store, store } from './store'
-import { createI18n } from 'vue-i18n'
+import { Store, store } from './store';
+import { createI18n } from 'vue-i18n';
 import { en, de } from './translations';
 
 customElements.define('external-link', ExternalLink);

@@ -2,7 +2,6 @@
 @import './layout/page';
 @import './layout/side-menu';
 @import './layout/nav-menu';
-@import './layout/language-select';
 @import './layout/talks';
 @import './layout/badge';
 
@@ -13,7 +12,6 @@
 		color: $link-hover;
 	}
 }
-
 *, ::before, ::after {
 	box-sizing: border-box;
 }
@@ -29,7 +27,7 @@ body {
 	border: none !important;
 }
 
-*:focus, *.is-focused {
+*:focus, *.is-focused, ::part(anchor):focus {
 	outline: 2px solid $alternate !important;	
 }
 

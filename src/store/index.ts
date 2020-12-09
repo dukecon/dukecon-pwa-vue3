@@ -1,4 +1,4 @@
-import { createStore } from "vuex";
+import { createStore } from 'vuex';
 import type { MetaData } from '@/types';
 import { loadConferenceData, loadMetadata } from '@/utils/api';
 import { MetaDataState, mutations as metaDataMutations } from './metaData';
@@ -22,10 +22,10 @@ export const Store = () => createStore({
 	mutations: {
 		...metaDataMutations,
 		...conferenceDataMutations,
-		setSearchString: (state, newValue: string) => {
+		setSearchString: (state: state, newValue: string) => {
 			state.searchString = newValue;
 		},
-		setLoadedState: (state, newValue: boolean) => {
+		setLoadedState: (state: state, newValue: boolean) => {
 			state.loaded = newValue;
 		}
 	},
@@ -33,7 +33,7 @@ export const Store = () => createStore({
 		setSearchString: ({ commit }, newValue) => {
 			commit('setSearchString', newValue);
 		},
-		load: async ({ commit, state }) => {
+		load: async ({ commit, state : state } ) => {
 			// later: etag, localstore, etc
 			commit('setLoadedState', false);
 			const metaData: MetaData = await loadMetadata();
