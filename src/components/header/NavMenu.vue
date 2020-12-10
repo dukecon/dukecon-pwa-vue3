@@ -15,6 +15,8 @@
 	</div>
 	<div :class="{'is-active': isOpen }" class="navbar-menu">
 		<router-link :class="{'is-active': $route.path==='/'}" to="/" class="navbar-item">{{$t('talks')}}</router-link>
+		<router-link :class="{'is-active': $route.path==='/timetable'}" to="/timetable" class="navbar-item">{{$t('timetable')}}</router-link>
+		<router-link :class="{'is-active': $route.path==='/speaker'}" to="/speaker" class="navbar-item">{{$t('speaker')}}</router-link>
 		<router-link :class="{'is-active': $route.path==='/about'}" to="/about" class="navbar-item">{{$t('feedback')}}</router-link>
 		<external-link v-if="homepageUrl" :href="homepageUrl" className="navbar-item" >{{homepageTitle}}</external-link>
 		<language-select class="navbar-item" />

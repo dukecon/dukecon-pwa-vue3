@@ -1,8 +1,7 @@
 $navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
-// $navbar-max-height: 200px;
 
 .navbar {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	.navbar-menu {
 		gap: 2px;
 	}
@@ -47,7 +46,7 @@ $navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
 		padding: 0 2px;
 		display: block;
 		position: absolute;
-		top: 2.75em;
+		top: $headerHeight;
 		right: 0;
 		transition: $navbar-transition;
 		background-color: $primary;
