@@ -19,9 +19,9 @@ export interface MetaData {
 	url: string;
 	homeUrl?: string;
 	homeTitle?: string;
-	imprint: TranslationLinks;
-	termsOfUse: TranslationLinks;
-	privacy: TranslationLinks;
+	imprint?: TranslationLinks;
+	termsOfUse?: TranslationLinks;
+	privacy?: TranslationLinks;
 	startDate: string;
 	endDate: string;
 	[key: string]: any;
@@ -35,11 +35,11 @@ export interface Talk {
 	abstractText: string;
 	demo: boolean;
 	simultan: boolean;
-	veryPolular: boolean;
+	veryPopular: boolean;
 	fullyBooked: boolean;
 	numberOfFavorites: number;
-	keywords: Record<string, string[]>;
-	documents: Record<string, string>;
+	keywords?: Record<string, string[]>;
+	documents?: Record<string, string | undefined | null>;
 	trackId: string;
 	audienceId: string;
 	typeId: string;

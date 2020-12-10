@@ -22,11 +22,6 @@ export const MetaDataState = (): MetaData => ({
 
 export const getters = {
 	footerLinks: (state: state): Record<string, Translation> => {
-		console.log('####', { 
-			imprint: state.metaData.imprint, 
-			termsOfUse: state.metaData.termsOfUse, 
-			privacy: state.metaData.privacy 
-		})
 		return { 
 			imprint: state.metaData.imprint, 
 			termsOfUse: state.metaData.termsOfUse, 
