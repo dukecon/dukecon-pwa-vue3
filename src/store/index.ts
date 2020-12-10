@@ -1,7 +1,7 @@
 import { createStore } from 'vuex';
 import type { MetaData } from '@/types';
 import { loadConferenceData, loadMetadata } from '@/utils/api';
-import { MetaDataState, mutations as metaDataMutations } from './metaData';
+import { MetaDataState, getters as metaDataGetters, mutations as metaDataMutations } from './metaData';
 import { ConferenceData, getters as conferenceDataGetters, mutations as conferenceDataMutations } from './conferenceData';
 import { FilterData } from './filterData';
 
@@ -17,6 +17,7 @@ export const Store = () => createStore({
 	strict: true,
 	state: State(),
 	getters: {
+		...metaDataGetters,
 		...conferenceDataGetters,
 	},
 	mutations: {

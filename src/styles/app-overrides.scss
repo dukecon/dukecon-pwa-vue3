@@ -4,6 +4,8 @@
 @import './layout/nav-menu';
 @import './layout/talks';
 @import './layout/badge';
+@import './layout/footer';
+
 
 ::part(anchor) {
 	color: $link;

@@ -81,12 +81,3 @@ $footerHeight: 2em !default;
 		}
 	}
 }
-.footer {
-	grid-area: footer;
-	position: sticky;
-	bottom: 0;
-	height: 2rem;
-	padding: 0;
-	box-shadow: $boxShadowTop;
-	z-index: 1;
-}

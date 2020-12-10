@@ -15,14 +15,14 @@
 
 <script lang="ts">
 // @ is an alias to /src
-import { computed } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useStore } from 'vuex';
 import SideMenu from '@/components/SideMenu.vue'; // need to add extension because TS compiler does not know it (BUG?)
 import FilterMenuButton from '@/components/filters/FilterMenuButton.vue';
 import FilterMenu from '@/components/filters/FilterMenu.vue';
 import TalksGrid from '@/components/overview/TalksGrid.vue';
 
-export default {
+export default defineComponent({
 	components: {
 		SideMenu,
 		FilterMenuButton,
@@ -39,5 +39,5 @@ export default {
 			filters,
 		}
 	}
-}
+});
 </script>
