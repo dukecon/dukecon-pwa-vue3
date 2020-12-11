@@ -1,7 +1,9 @@
 $navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
+$navbar-height: 3rem !default;
+$navbar-fontsize: 1.3rem !default;
 
 .navbar {
-	font-size: 1.3rem;
+	font-size: $navbar-fontsize;
 	.navbar-menu {
 		gap: 2px;
 	}
@@ -9,28 +11,27 @@ $navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
 		align-items: center;
 	}
 	.navbar-item {
-		margin-top: 2px;
-		margin-bottom: 2px;
 		white-space: nowrap;
 		&::part(anchor) {
 			padding: 0.5rem 0.75rem;
-			color: inherit;
+			color: $navbar-item-color;
 			background: inherit;
 			&:hover {
-				color: $primary;
-				background: findColorInvert($primary);
+				color: $navbar-item-hover-color;
+				background: $navbar-item-hover-background-color;
 			}
 			&:focus {
-				color: $primary;
-				background: findColorInvert($primary);
+				color: $navbar-item-hover-color;
+				background: $navbar-item-hover-background-color;
+			}
+			&.is-active {
+				color: $navbar-item-active-color;
+				background: $navbar-item-active-background-color;
 			}
 		}
 	}
 	external-link {
 		padding: 0 !important;
-	}
-	.button {
-		height: 2.5rem;
 	}
 	.button:focus, .button.is-focused {
 		color: inherit;

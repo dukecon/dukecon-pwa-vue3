@@ -27,8 +27,12 @@ $size-5: 1rem;
 $size-6: 1rem;
 
 //----------- components
+$headerHeight: 3rem;
+$footerHeight: 2em;
+
 $navbar-background-color: rbga(0,0,0,0);
-$navbar-height: 3rem;
+$navbar-height: 2rem;
+$navbar-fontsize: 1.2rem;
 $navbar-item-color: $white-ter;
 $navbar-item-hover-background-color: $white-ter;
 $navbar-item-active-background-color: $white;
