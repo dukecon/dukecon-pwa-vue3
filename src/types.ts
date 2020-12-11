@@ -24,6 +24,7 @@ export interface MetaData {
 	privacy?: TranslationLinks;
 	startDate: string;
 	endDate: string;
+	authEnabled?: boolean;
 	[key: string]: any;
 }
 

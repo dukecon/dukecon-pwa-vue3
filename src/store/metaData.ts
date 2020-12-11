@@ -23,9 +23,9 @@ export const MetaDataState = (): MetaData => ({
 export const getters = {
 	footerLinks: (state: state): Record<string, Translation> => {
 		return { 
-			imprint: state.metaData.imprint, 
-			termsOfUse: state.metaData.termsOfUse, 
-			privacy: state.metaData.privacy 
+			imprint: state.metaData.imprint || {}, 
+			termsOfUse: state.metaData.termsOfUse || {}, 
+			privacy: state.metaData.privacy || {}
 		};
 	}
 
@@ -33,14 +33,10 @@ export const getters = {
 
 export const mutations = {
 	initialize: (state: state, metaData: MetaData) => {
-		state.metaData.id = metaData.id;
+		state.metaData = {...metaData};
 		state.metaData.name = metaData.name || defaultTitle;
 		state.metaData.url = metaData.url || defaultUrl;
-		state.metaData.homeUrl = metaData.homeUrl || '';
-		state.metaData.homeTitle = metaData.homeTitle || '';
-		state.metaData.imprint = metaData.imprint;
-		state.metaData.termsOfUse = metaData.termsOfUse;
-		state.metaData.privacy = metaData.privacy;
+		console.log(JSON.stringify(metaData, null, ' '));
 	},
 }
 

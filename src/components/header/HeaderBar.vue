@@ -4,13 +4,12 @@
 			<img alt="" src="@/assets/logo_dukecon_on_white.png">
 		</div>
 		<quick-search />
-		<login-area :class="{ 'is-hidden' : !loginEnabled }" />
+		<login-area />
 		<nav-menu />
 	</header>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { useStore } from 'vuex';
+import { defineComponent } from 'vue';
 import LoginArea from '@/components/header/LoginArea.vue';
 import QuickSearch from '@/components/header/QuickSearch.vue';
 import NavMenu from '@/components/header/NavMenu.vue';
@@ -21,12 +20,5 @@ export default defineComponent({
 		QuickSearch,
 		NavMenu,
 	},
-	setup() {
-		const store = useStore();
-		const loginEnabled = ref(store.state.metaData.authEnabled);
-		return {
-			loginEnabled,
-		}
-	}
 });
 </script>
