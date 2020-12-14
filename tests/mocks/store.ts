@@ -10,10 +10,14 @@ const metaData: MetaData = {
 	startDate: '',
 	endDate: '',
 };
-const conferences:any = {}; 
+const conferences:any = {
+	events: [
+
+	]
+};
 
 const myActions = { ...actions };
-myActions.load = async ({ commit, state }: { commit: Commit, state: state } ) => {
+myActions.load = async ({ commit }: { commit: Commit } ) => {
 	commit('setLoadedState', false);
 	commit('initialize', metaData);
 	commit('updateConferences', conferences);
