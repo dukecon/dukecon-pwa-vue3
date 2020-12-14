@@ -1,6 +1,6 @@
 import type{ Commit } from 'vuex';
 import type { MetaData } from '@/types';
-import { Store, actions, state } from '@/store';
+import { Store, actions } from '@/store';
 
 const metaData: MetaData = {
 	id: 'my-conference',
