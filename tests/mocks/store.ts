@@ -1,27 +1,12 @@
-import type{ Commit } from 'vuex';
-import type { MetaData } from '@/types';
-import { Store, actions } from '@/store';
+import { Store } from '@/store';
+import conference from '../../public/rest/conferences/javaland2019.json';
+import metaData from '../../public/rest/init.json';
 
-const metaData: MetaData = {
-	id: 'my-conference',
-	name: 'My Conference',
-	year: '1999',
-	url: '',
-	startDate: '',
-	endDate: '',
-};
-const conferences:any = {
-	events: [
+import { Api } from '@/utils/api';
 
-	]
-};
+const api: Api = {
+	loadConferenceData: () => Promise.resolve(conference),
+	loadMetadata: () => Promise.resolve(metaData)
+}
 
-const myActions = { ...actions };
-myActions.load = async ({ commit }: { commit: Commit } ) => {
-	commit('setLoadedState', false);
-	commit('initialize', metaData);
-	commit('updateConferences', conferences);
-	commit('setLoadedState', true);
-};
-
-export const store = Store(myActions);
+export const mockStore = Store(api);

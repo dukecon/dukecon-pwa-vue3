@@ -48,3 +48,9 @@ export const loadImages = async () => {
 	return fetchJson('image-resources.json');
 };
 
+export const api = {
+	loadMetadata,
+	loadConferenceData
+}
+
+export type Api = typeof api;

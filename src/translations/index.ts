@@ -1,5 +1,5 @@
-import { default as en } from './en.json';
-import { default as de } from './de.json';
+import en from './en.json';
+import de from './de.json';
 import { createI18n } from 'vue-i18n';
 
 export const availableLanguages = ['de', 'en'];

@@ -1,6 +1,6 @@
 import { Commit, createStore } from 'vuex';
 import type { MetaData } from '@/types';
-import { loadConferenceData, loadMetadata } from '@/utils/api';
+import { api as defaultApi, Api } from '@/utils/api';
 import { MetaDataState, getters as metaDataGetters, mutations as metaDataMutations } from './metaData';
 import { ConferenceData, getters as conferenceDataGetters, mutations as conferenceDataMutations } from './conferenceData';
 import { FilterData } from './filterData';
@@ -29,27 +29,27 @@ export const mutations = {
 	}
 }
 
-export const actions = {
+export const actions = (api: Api) => ({
 	setSearchString: ({ commit }: { commit: Commit}, newValue: string) => {
 		commit('setSearchString', newValue);
 	},
 	load: async ({ commit, state }: { commit: Commit, state: state } ) => {
 		// later: etag, localstore, etc
 		commit('setLoadedState', false);
-		const metaData: MetaData = await loadMetadata();
+		const metaData: MetaData = await api.loadMetadata();
 		commit('initialize', metaData);
-		const conferences = await loadConferenceData(state.metaData.id);
+		const conferences = await api.loadConferenceData(state.metaData.id);
 		commit('updateConferences', conferences);
 		commit('setLoadedState', true);
 	}
-}
+});
 
-export const Store = (customActions: Record<string, any> = actions) => createStore({
+export const Store = (api:Api = defaultApi) => createStore({
 	strict: true,
 	state: State(),
 	getters,
 	mutations,
-	actions: customActions,
+	actions: actions(api),
 	modules: {}
 });
 
