@@ -2,6 +2,9 @@ $navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
 $navbar-height: 3rem !default;
 $navbar-fontsize: 1.3rem !default;
 
+.nav-menu-veil {
+	display: none;
+}
 .navbar {
 	font-size: $navbar-fontsize;
 	.navbar-menu {
@@ -42,21 +45,37 @@ $navbar-fontsize: 1.3rem !default;
 }
 
 @media screen and (max-width: 1023px) {
+	.nav-menu-veil {
+		&.is-active {
+			position: absolute;
+			display: block;
+			background: rgba(0, 0, 0, 0);
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
 	.navbar-menu {
 		clip-path: inset(0 0 100% 0);
+		display: flex;
+		flex-direction: column;
 		padding: 0 2px;
-		display: block;
 		position: absolute;
 		top: $headerHeight;
 		right: 0;
 		transition: $navbar-transition;
 		background-color: $primary;
 		box-shadow: $boxShadow;
+		.navbar-item:first-child {
+			margin-top: 2px;
+		}
 		& > * {
 			visibility: hidden;
 			transition-delay: 0.5s;
 		}
 		&.is-active {
+			display: flex;
 			clip-path: inset(0 0 0 0);
 			* {
 				visibility: visible;
