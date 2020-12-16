@@ -9,4 +9,4 @@ const api: Api = {
 	loadMetadata: () => Promise.resolve(metaData)
 }
 
-export const mockStore = Store(api);
+export const MockStore = () => Store(api);

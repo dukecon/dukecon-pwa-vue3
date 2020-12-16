@@ -1,5 +1,5 @@
 import { MountOptions } from '@t/utils';
-import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import NavMenu from '@/components/header/NavMenu.vue';
 import router from '@/router'
 
@@ -10,7 +10,7 @@ describe('NavMenu', () => {
 		router.push('/');
 		await router.isReady(); // prevent code warning about history being null
 
-		const wrapper = shallowMount(NavMenu, MountOptions({}, router));
+		const wrapper = mount(NavMenu, MountOptions({}, router));
 		const button = wrapper.find('button');
 		const menu = wrapper.find('.navbar-menu');
 
@@ -27,7 +27,7 @@ describe('NavMenu', () => {
 		router.push('/');
 		await router.isReady(); // prevent code warning about history being null
 
-		const wrapper = shallowMount(NavMenu, MountOptions({}, router));
+		const wrapper = mount(NavMenu, MountOptions({}, router));
 		const button = wrapper.find('button');
 		const menu = wrapper.find('.navbar-menu');
 
@@ -35,7 +35,7 @@ describe('NavMenu', () => {
 		await button.trigger('click');
 		expect(menu.classes(classToCheck)).toBe(true);
 		expect(button.classes(classToCheck)).toBe(true);
-		await wrapper.trigger('keyup.esc');
+		await wrapper.find('.navbar').trigger('keyup.esc');
 		expect(menu.classes(classToCheck)).toBe(false);
 		expect(button.classes(classToCheck)).toBe(false);
 	});

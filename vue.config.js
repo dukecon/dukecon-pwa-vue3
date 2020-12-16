@@ -7,6 +7,8 @@ module.exports = {
 				return args;
 			});
 		// TODO: make this work to get rid of console warnings about external-link
+		// see https://github.com/vuejs/vue-next/issues/1414
+		//
 		// config.module
 		// 	.rule('vue')
 		// 	.use('vue-loader')

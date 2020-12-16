@@ -1,6 +1,6 @@
 <template>
     <teleport to="body">
-		<div :class="{'is-active': isOpen }" class="nav-menu-veil" aria-hidden="true" @click="close()" @keyup.esc="close()">&nbsp;</div>
+		<div :class="{'is-active': isOpen }" class="nav-menu-veil" aria-hidden="true" @click="close()">&nbsp;</div>
 	</teleport>
 	<nav class="navbar" role="navigation" aria-label="main navigation" @keyup.esc="close()">
 		<div class="navbar-brand">
@@ -46,6 +46,7 @@ export default defineComponent({
 			isOpen.value = !isOpen.value
 		};
 		const close = () =>  {
+			console.log('CLOSE TRIGGERED')
 			isOpen.value = false;
 		};
 

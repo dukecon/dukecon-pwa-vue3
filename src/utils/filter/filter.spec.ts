@@ -24,13 +24,13 @@ const talk: Talk = {
  };
 
 
-describe('foo', () => {
-	it('matches in id, title or abstract, case insensitive', () => {
+describe('filtered talks', () => {
+	it('quicksearch matches in id, title or abstract, case insensitive', () => {
 		expect (eventMatches('569')(talk)).toBe(true);
 		expect (eventMatches('ddd')(talk)).toBe(true);
 		expect (eventMatches('OUR')(talk)).toBe(true);
 	});
-	it('does not match other fields', () => {
+	it('quicksearch does not match other fields', () => {
 		expect (eventMatches('382')(talk)).toBe(false);
 		expect (eventMatches('22')(talk)).toBe(false);
 		expect (eventMatches('qwerrtz')(talk)).toBe(false);
