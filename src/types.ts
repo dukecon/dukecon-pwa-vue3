@@ -14,9 +14,9 @@ export type Id = string;
 
 export interface MetaData {
 	id: Id;
-	name: string;
-	year: string;
-	url: string;
+	name?: string;
+	year?: string;
+	url?: string;
 	homeUrl?: string;
 	homeTitle?: string;
 	imprint?: TranslationLinks;
@@ -47,7 +47,7 @@ export interface Talk {
 	locationId: string;
 	speakerIds: string[];
 	languageId: string;
-};
+}
 
 export interface Location extends NamedOrderedItem {
 	capacity: number;

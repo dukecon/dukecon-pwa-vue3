@@ -11,14 +11,14 @@ export function MountOptions ({ store = MockStore(), locale = 'de'} = {}, ...add
 	};
 }
 
-export function MetaData( links?: Record<string, TranslationLinks>, start? :string, end?: string ): MetaData {
+export function MetaData( links?: Record<string, TranslationLinks>): MetaData {
 	return {
 		id: 'test',
 		name: 'Test',
 		year: '2020',
 		url: 'http://www.conference.com',
-		startDate: start || '',
-		endDate: end || '',
+		startDate: '2020-04-01',
+		endDate: '2020-04-03',
 		...links
 	};
 }

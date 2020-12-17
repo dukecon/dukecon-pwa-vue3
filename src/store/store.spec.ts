@@ -1,4 +1,5 @@
 import { Store, getters } from '@/store';
+import { defaultTitle, defaultUrl } from '@/store/metaData';
 import { MetaData } from '@t/utils';
 
 const imprint =  {
@@ -21,7 +22,7 @@ const bogus = {
 	en: 'should_not_be_here',
 };
 
-describe('getters', () => {
+describe('Store: getters', () => {
 	it('gets all links', () => {
 		const store = Store();
 		store.commit('initialize', MetaData({imprint, termsOfUse, privacy, bogus}));
@@ -39,3 +40,17 @@ describe('getters', () => {
 	});
 });
 // TODO: mutations (initialize sets defaults)
+describe('Store: mutations', () => {
+	it('initialize sets default values', () => {
+		const store = Store();
+		const metaData = MetaData({imprint, termsOfUse, privacy, bogus});
+		delete metaData.name;
+		metaData.url = '';
+		delete metaData.homeUrl;
+
+		store.commit('initialize', metaData);
+		expect(store.state.metaData.name).toBe(defaultTitle);
+		expect(store.state.metaData.url).toBe(defaultUrl);
+		expect(store.state.metaData.homeUrl).toBe(defaultUrl);
+	});
+});
