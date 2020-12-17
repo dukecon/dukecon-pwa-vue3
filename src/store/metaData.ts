@@ -42,10 +42,12 @@ export const getters = {
 
 export const mutations = {
 	initialize: (state: state, metaData: MetaData) => {
-		state.metaData = { ...metaData};
-		state.metaData.name = metaData.name || defaultTitle;
-		state.metaData.url = metaData.url || defaultUrl;
-		state.metaData.homeUrl = metaData.homeUrl || defaultUrl;
+		state.metaData = {
+			...metaData,
+			name: metaData.name || defaultTitle,
+			url: metaData.url || defaultUrl,
+			homeUrl: metaData.homeUrl || defaultUrl
+		};
 	},
 }
 

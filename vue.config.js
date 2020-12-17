@@ -6,20 +6,17 @@ module.exports = {
 				args[0].title = "DukeCon Conference Planner 3.0";
 				return args;
 			});
-		// TODO: make this work to get rid of console warnings about external-link
-		// see https://github.com/vuejs/vue-next/issues/1414
-		//
-		// config.module
-		// 	.rule('vue')
-		// 	.use('vue-loader')
-		// 	.loader('vue-loader')
-		// 	.tap(options => {
-		// 		options.compilerOptions = {
-		// 			...(options.compilerOptions || {}),
-		// 			isCustomElement: tag => ['external-link'].includes(tag)
-		// 	};
-		// 	return options;
-		// });
+
+		config.module
+			.rule('vue')
+			.use('vue-loader')
+			.tap(options => {
+				options.compilerOptions = {
+					...options.compilerOptions,
+					isCustomElement: tag => ['external-link'].includes(tag)
+				};
+				return options;
+			});
 	},
 	css: {
 		sourceMap: true,

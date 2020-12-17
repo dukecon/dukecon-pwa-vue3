@@ -7,5 +7,14 @@ module.exports = {
 	},
 	transform: {
 		"^.+\\.vue$": "vue-jest"
+	},
+	globals: {
+		"vue-jest": {
+			templateCompiler: {
+				compilerOptions: {
+					isCustomElement: tag => ['external-link'].includes(tag)
+				}
+			}
+		}
 	}
 };
