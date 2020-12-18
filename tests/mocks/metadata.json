@@ -1,0 +1,12 @@
+{
+  "id": "conference-id",
+  "name": "Conference Name",
+  "year": "2019",
+  "url": "original_url",
+  "homeUrl": "original_homeurl",
+  "startDate": "2019-03-19",
+  "endDate": "2019-03-21",
+  "longTalkThresholdMinutes": 60,
+  "authEnabled": true,
+  "noAuthEnableIdParam": false
+}

@@ -1,0 +1,412 @@
+{
+	"id": "Overwritten",
+	"name": "Overwritten Name",
+	"url": "overwritten_url",
+	"homeUrl": "overwritten_homeurl",
+	"metaData": {
+	  "id": "Overwritten",
+	  "audiences": [
+		{
+		  "id": "1",
+		  "order": 1,
+		  "names": {
+			"de": "Anfänger",
+			"en": "Beginners"
+		  },
+		  "icon": "audience_1.png"
+		},
+		{
+		  "id": "2",
+		  "order": 2,
+		  "names": {
+			"de": "Experten",
+			"en": "experts"
+		  },
+		  "icon": "audience_2.png"
+		}
+	  ],
+	  "eventTypes": [
+		{
+		  "id": "1",
+		  "order": 1,
+		  "names": {
+			"de": "Abendveranstaltung",
+			"en": "Evening Event"
+		  },
+		  "icon": "eventType_1.png"
+		},
+		{
+		  "id": "2",
+		  "order": 2,
+		  "names": {
+			"de": "Best Practices",
+			"en": "best practices"
+		  },
+		  "icon": "eventType_2.png"
+		},
+		{
+		  "id": "3",
+		  "order": 3,
+		  "names": {
+			"de": "Diamond-Session",
+			"en": "diamond session"
+		  },
+		  "icon": "eventType_3.png"
+		}
+	  ],
+	  "languages": [
+		{
+		  "id": "1",
+		  "code": "de",
+		  "order": 1,
+		  "names": {
+			"de": "Deutsch",
+			"en": "German"
+		  },
+		  "icon": "language_de.png"
+		},
+		{
+		  "id": "2",
+		  "code": "en",
+		  "order": 2,
+		  "names": {
+			"de": "Englisch",
+			"en": "English"
+		  },
+		  "icon": "language_en.png"
+		}
+	  ],
+	  "defaultLanguage": {
+		"id": "1",
+		"code": "de",
+		"order": 1,
+		"names": {
+		  "de": "Deutsch",
+		  "en": "German"
+		},
+		"icon": "language_de.png"
+	  },
+	  "tracks": [
+		{
+		  "id": "1",
+		  "order": 1,
+		  "names": {
+			"de": "Core Java & JVM Technologien",
+			"en": "Core Java & JVM Technologies"
+		  },
+		  "icon": "track_1.png"
+		},
+		{
+		  "id": "2",
+		  "order": 2,
+		  "names": {
+			"de": "JVM Sprachen",
+			"en": "JVM Languages"
+		  },
+		  "icon": "track_2.png"
+		},
+		{
+		  "id": "3",
+		  "order": 3,
+		  "names": {
+			"de": "Methodology & Culture",
+			"en": "Methodology & Culture"
+		  },
+		  "icon": "track_3.png"
+		}
+	  ],
+	  "locations": [
+		{
+		  "id": "1",
+		  "order": 1,
+		  "names": {
+			"de": "Silverado Theater",
+			"en": "Silverado Theater"
+		  },
+		  "icon": "location_1.png",
+		  "capacity": 1200
+		},
+		{
+		  "id": "2",
+		  "order": 10,
+		  "names": {
+			"de": "Quantum 1",
+			"en": "Quantum 1"
+		  },
+		  "icon": "location_10.png",
+		  "capacity": 60
+		},
+		{
+		  "id": "3",
+		  "order": 11,
+		  "names": {
+			"de": "Quantum 2",
+			"en": "Quantum 2"
+		  },
+		  "icon": "location_11.png",
+		  "capacity": 60
+		}
+	  ],
+	  "defaultIcon": "Unknown.png"
+	},
+	"events": [
+	  {
+		"id": "1",
+		"start": "2019-03-19T13:00:00",
+		"end": "2019-03-19T13:40:00",
+		"title": "From EventStorming to CoDDDing ",
+		"abstractText": "To really understand what our users need so that we can build the right thing, we want to have a first-hand experience of 'real-life stories' before we model and create our software. To quote Alberto Brandolini \"it is not the domain expert's knowledge that goes into production, it is the developer's assumption of that knowledge that goes into production\". Event Storming is a visual technique that minimizes assumptions by engaging in collaborative deliberate learning across different disciplines. This helps to solve complex business problems in the most effective way.\n \nAlthough the learning of the domain helps us to understand the domain better, Event Storming can be quite an overwhelming experience. Developers can be left with the question of how to turn a few stickies on a wall into working code.\n \nJoin us in this talk in which we show the basic principles of Event Storming. We will cover the different forms of Event Storming and in which situation they best can be applied. And, we will show how you can leverage DDD (Domain-Driven Design) patterns in an Event Storming software modeling session that will ultimately result in coding TDD (Test Driven Development) style!",
+		"demo": true,
+		"simultan": false,
+		"veryPopular": true,
+		"fullyBooked": false,
+		"numberOfFavorites": 0,
+		"keywords": {
+		  "de": [
+			"Behaviour-Driven Development",
+			"Design Patterns",
+			"Domain-Driven Design",
+			"Message-Driven Architecture"
+		  ],
+		  "en": [
+			"Behaviour-Driven Development",
+			"Design Patterns",
+			"Domain-Driven Design",
+			"Message-Driven Architecture"
+		  ]
+		},
+		"documents": {
+		  "slides": null,
+		  "manuscript": null,
+		  "other": null
+		},
+		"trackId": "1",
+		"audienceId": "1",
+		"typeId": "1",
+		"locationId": "1",
+		"speakerIds": [
+		  "7"
+		],
+		"languageId": "2"
+	  },
+	  {
+		"id": "2",
+		"start": "2019-03-20T12:00:00",
+		"end": "2019-03-20T12:40:00",
+		"title": "Fluent API for Java 11 and beyond",
+		"abstractText": "This presentation introduces Fluent API (a.k.a. Fluent Interface) to the audience and how the API generation process can be automated using annotation processors. Fluent API is related to builder pattern, but it goes an extra mile especially when we use integrated development environment with code completion functionalities. Using fluent API the chance to use a builder is less likely and the resulting code can be more readable. Fluent API is not new. The term was coined in 2005 by Martin Fowler. Fluent API is widely used in many frameworks, like mockito or JOOQ.\n\nThe new thing that this presentation focuses on how we can create fluent API using the features available in Java 8 (default methods and lambda), Java 9 (private methods in interfaces), Java 10 (var declarations) and Java 11 extending the var declarations to lambda expressions and JVM support for nested classes.",
+		"demo": true,
+		"simultan": false,
+		"veryPopular": true,
+		"fullyBooked": false,
+		"numberOfFavorites": 0,
+		"keywords": {
+		  "de": [
+			"API",
+			"Java Language Features",
+			"Java 10",
+			"Java 11",
+			"Java 9"
+		  ],
+		  "en": [
+			"API",
+			"Java Language Features",
+			"Java 10",
+			"Java 11",
+			"Java 9"
+		  ]
+		},
+		"documents": {
+		  "slides": null,
+		  "manuscript": null,
+		  "other": null
+		},
+		"trackId": "2",
+		"audienceId": "2",
+		"typeId": "2",
+		"locationId": "2",
+		"speakerIds": [
+		  "7", "8"
+		],
+		"languageId": "2"
+	  },
+	  {
+		"id": "3",
+		"start": "2019-03-20T12:00:00",
+		"end": "2019-03-20T12:40:00",
+		"title": "Web-API-Design in Java",
+		"abstractText": "Web-APIs sind das aktuelle Trendthema in den IT-Abteilungen. Als primärer Kommunikationspartner für Fat-, Mobil- und Web-Clients sind Web-APIs das Rückgrat moderner verteilter Anwendungen. Sind synchrone Requests via REST und GraphQL oder Push-Notifications via Server-Sent Events und WebSocket die bessere Wahl? Welches Austauschformat sollte man wählen? Wie sieht gutes \"Error Handling\" aus? Und was ist mit Themen wie Security und Versionierung? \n\nLebensnahe Beispiele, jede Menge Best-Practices und viel Code, der nahtlos in eigene Projekte übernommen werden kann, bilden die Grundlage für die Session.",
+		"demo": true,
+		"simultan": false,
+		"veryPopular": true,
+		"fullyBooked": false,
+		"numberOfFavorites": 0,
+		"keywords": {
+		  "de": [],
+		  "en": []
+		},
+		"documents": {
+		  "slides": null,
+		  "manuscript": null,
+		  "other": null
+		},
+		"trackId": "3",
+		"audienceId": "1",
+		"typeId": "3",
+		"locationId": "3",
+		"speakerIds": [
+		  "9"
+		],
+		"languageId": "1"
+	  },
+	  {
+		"id": "4",
+		"start": "2019-03-20T09:00:00",
+		"end": "2019-03-20T09:40:00",
+		"title": "Von relationalen Datenbanken zu Daten mit Relationen",
+		"abstractText": "Im Lauf der letzten paar Jahre zeichnete sich eine deutliche Renaissance von relationalen Datenbanken und der \"Macht\" von SQL ab. Relationale Datenbanken spielen ihre Stärken immer dann aus, wenn Aggregationen über größere Datenreihen gebildet (Summen, Moving-Windows, Durchschnittswerte und so weiter) oder Listen von Dingen aus großen Sets zusammengestellt werden sollen, die nur auf eine beschränkte Menge an Joins angewiesen sind.\n\nGraph-Datenbanken wie Neo4j haben aber einige Eigenschaften, die kaum ein anderer Store hat. Graph-Datenbanken sind immer dann gefragt, wenn gerichtete, komplexe Objektbäume gespeichert und auf unterschiedliche Weise abgefragt werden sollen. Objekte und ihre Beziehungen untereinander sind gleichermaßen Kernkonzepte von Neo4j. Dank Cypher, der Graph-Abfragesprache von Neo4j, lassen sich Abfragen aller Art leichtfüßig formulieren. Weitere Anwendungsfälle sind Abfragen, die Pfadsuchen durchführen, Schwerpunkte in Beziehungsnetzwerken ermitteln und vieles andere mehr.\n\nIn diesem Vortrag werde ich mit dem Datenbestand meines SQL-Fetish-Vortrags beginnen. Die Zeitreihen, die musikalische Vorlieben widerspiegeln, werden mit Neo4js ETL-Tool (Extract-Transform-Load) direkt aus der relationalen Datenbank ausgelesen und in einen gerichteten Property-Graphen transformiert. \n\nIm zweiten Schritt werden die Zuhörer Abfragen kennen lernen, die die Aggregrationen der SQL-Daten perfekt ergänzen: Können wir in 40 Minuten eine Empfehlungs-Engine auf Basis von Beziehungen von Künstlern, Ländern, Alben und Hörgewohnheiten bauen, die über die Empfehlung bekannter Online-Portale (\"Kunde hört die Die Ärzte, also mag er auch Sportfreunde Stiller\") hinaus geht?\n\nIm letzten Schritt wird eine Anwendung auf Basis von Spring Data Neo4j skizziert.",
+		"demo": true,
+		"simultan": false,
+		"veryPopular": true,
+		"fullyBooked": false,
+		"numberOfFavorites": 0,
+		"keywords": {
+		  "de": [
+			"Analytics",
+			"Datenbank",
+			"Empfehlungen",
+			"NoSQL",
+			"Smart Data"
+		  ],
+		  "en": [
+			"Analytics",
+			"Database",
+			"Recommendations",
+			"NoSQL",
+			"Smart Data"
+		  ]
+		},
+		"documents": {
+		  "slides": null,
+		  "manuscript": null,
+		  "other": null
+		},
+		"trackId": "1",
+		"audienceId": "1",
+		"typeId": "1",
+		"locationId": "1",
+		"speakerIds": [
+		  "9"
+		],
+		"languageId": "1"
+	  },
+	  {
+		"id": "5",
+		"start": "2019-03-20T12:00:00",
+		"end": "2019-03-20T12:40:00",
+		"title": "Kubernetes Runtime Security: When Contaniers Go Bad",
+		"abstractText": "Kubernetes security typically focuses on infrastructure: verifying that configuration is safe, and your deployment has no known issues. In this talk Jen will focus on a different aspect: runtime security. Runtime security is about mitigating damage done when part of your deployment is compromised.\n\nShe'll start with an overview of common runtime security concerns, and discuss how they change as you move to containers and Kubernetes. Next, she will highlight existing features that help you respond to these risks, and explore popular tools to detect and control compromises. She'll finish off with a demo that shows these techniques in action as they protect a web application.\n\nYou'll leave with an understanding of how to plan ahead to minimize impact, and how to respond to events when they happen.",
+		"demo": true,
+		"simultan": false,
+		"veryPopular": false,
+		"fullyBooked": false,
+		"numberOfFavorites": 0,
+		"keywords": {
+		  "de": [],
+		  "en": []
+		},
+		"documents": {
+		  "slides": null,
+		  "manuscript": null,
+		  "other": null
+		},
+		"trackId": "2",
+		"audienceId": "2",
+		"typeId": "2",
+		"locationId": "2",
+		"speakerIds": [
+		  "9"
+		],
+		"languageId": "2"
+	  },
+	  {
+		"id": "6",
+		"start": "2019-03-19T16:00:00",
+		"end": "2019-03-19T16:40:00",
+		"title": "Comment Your &*&#9760;# Code!",
+		"abstractText": "You think your code is so clean that it doesn't need any comments? Or are your colleagues convinced that all comments are failures? Then this talk is for you!\n\nLet's first dispute some common arguments against commenting code:\n\n* Comments lie?\n* Tests are better?\n* Good names suffice?\n\nWe'll find fault with all of them (and more)!\n\nWith that out of the way we'll categorize comments and analyze their costs and benefits. This will give us the means to discuss the end: Which comments will improve a code base? Of course, every team has to come up with its own answer. But the vocabulary and ideas presented in this talk can help find it.",
+		"demo": false,
+		"simultan": false,
+		"veryPopular": false,
+		"fullyBooked": false,
+		"numberOfFavorites": 0,
+		"keywords": {
+		  "de": [
+			"Agile"
+		  ],
+		  "en": [
+			"Agile"
+		  ]
+		},
+		"documents": {
+		  "slides": null,
+		  "manuscript": null,
+		  "other": null
+		},
+		"trackId": "3",
+		"audienceId": "2",
+		"typeId": "3",
+		"locationId": "3",
+		"speakerIds": [
+		  "9"
+		],
+		"languageId": "2"
+	  }
+	],
+	"speakers": [
+	  {
+		"id": "7",
+		"name": "Kenny Baas",
+		"firstname": "Kenny",
+		"lastname": "Baas",
+		"company": "Xebia",
+		"website": "http://baasie.com",
+		"twitter": "https://twitter.com/kenny_baas",
+		"linkedin": "https://www.linkedin.com/in/kenny-baas/",
+		"bio": "Kenny Baas-Schwegler is a software engineer and consultant focusing on building quality into software delivery at Xebia. He mentors, coaches and consults teams by using practices techniques and tools from Domain Driven Design, Behaviour Driven Development, Test Driven Development, and Continuous Delivery. \r\n\r\nThrough Aikido training he learned the most efficient way to work together. To get the outcome that all parties want, energy should not be blocked but should be bent and influenced. The philosophy behind this line of reasoning is not only embedded in his personal life, but also in his work life. He is an advocate for multidisciplinary collaboration in open spaces. By using and combining tools such as EventStorming, and Example Mapping, he helps engineer requirements to design and model software. With these approaches, he aims to create a transparent, collaborative space with constant and instant feedback when delivering software.\r\n\r\nBesides his daily work, he also helps organise several meetups for Behaviour Driven Development NL, Domain Driven Design Nederland en EventStorming Netherlands and also often speaks and gives hands-on workshops at conferences and meetups. ",
+		"photoId": "4731c46a08a29344db7f2963df0024d5",
+		"eventIds": [
+		  "1"
+		]
+	  },
+	  {
+		"id": "8",
+		"name": "Peter Verhas",
+		"firstname": "Peter",
+		"lastname": "Verhas",
+		"company": "N/A",
+		"twitter": "https://twitter.com/verhas",
+		"linkedin": "https://www.linkedin.com/in/peterverhas/",
+		"bio": "Peter Verhas is a senior software engineer and software architect. He is author of several open source programs, his blog posts articles every week and he is the author of the book Java 9 Programming By Example.\r\n\r\nHe worked in the telecommunication and finance industry in several positions and was CIO of the Hungarian startup index.hu during its starting days. Peter currently works for EPAM Switzerland.",
+		"photoId": "3e6568aad36ee963d848905167a003f4",
+		"eventIds": [
+		  "1", "2"
+		]
+	  },
+	  {
+		"id": "9",
+		"name": "Stephan Müller",
+		"firstname": "Stephan",
+		"lastname": "Müller",
+		"company": "open knowledge GmbH",
+		"bio": "Stephan Müller ist Enterprise Architect bei der open knowledge GmbH in Oldenburg. Er verfügt über mehrjährige Erfahrung als Architekt, Projektleiter und Trainer im Enterprise-Umfeld. Seine Interessenschwerpunkte sind service-orientierte Architekturen, neue Technologien und guter Code.",
+		"eventIds": [
+		  "3", 
+		  "4", 
+		  "5", 
+		  "6"
+		]
+	  }
+	]
+  }
+  

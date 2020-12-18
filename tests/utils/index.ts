@@ -1,8 +1,8 @@
-import { MockStore } from '@t/mocks/store';
+import { MockApiStore } from '@t/mocks/store';
 import { I18n } from '@/translations';
 import type { MetaData, TranslationLinks } from '@/types';
 
-export function MountOptions ({ store = MockStore(), locale = 'de'} = {}, ...additional:Array<any> ) {
+export function MountOptions ({ store = MockApiStore(), locale = 'de'} = {}, ...additional:Array<any> ) {
 	return {
 		stubs: ['router-link', 'router-view', 'external-link'],
 		global: {

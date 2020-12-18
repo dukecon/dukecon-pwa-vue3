@@ -1,6 +1,6 @@
 import { Store } from '@/store';
-import conference from '../../public/rest/conferences/javaland2019.json';
-import metaData from '../../public/rest/init.json';
+import conference from '@t/mocks/conferences.json';
+import metaData from '@t/mocks/metadata.json';
 
 import { Api } from '@/utils/api';
 
@@ -9,4 +9,4 @@ const api: Api = {
 	loadMetadata: () => Promise.resolve(metaData)
 }
 
-export const MockStore = () => Store(api);
+export const MockApiStore = () => Store(api);

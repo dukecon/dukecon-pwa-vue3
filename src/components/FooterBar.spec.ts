@@ -1,7 +1,7 @@
 import { MountOptions } from '@t/utils';
 import { mount } from '@vue/test-utils';
 import FooterBar from '@/components/FooterBar.vue';
-import { MockStore } from '@t/mocks/store';
+import { MockApiStore } from '@t/mocks/store';
 import { MetaData } from '@t/utils';
 
 const imprint =  {
@@ -30,7 +30,7 @@ describe('LanguageSelect', () => {
    // test probably makes little sense, better to test the getter directly
 
 	it('shows links and text for de', async () => {
-		const store = MockStore()
+		const store = MockApiStore()
 		store.commit('initialize', MetaData({imprint, termsOfUse, privacy, bogus}));
 		const wrapper = mount(FooterBar, MountOptions({store, locale: 'de'}));
 
@@ -44,7 +44,7 @@ describe('LanguageSelect', () => {
 		expect(wrapper.html()).toContain('privacy_german_link');
 	});
 	it('shows links and text for en', async () => {
-		const store = MockStore()
+		const store = MockApiStore()
 		store.commit('initialize', MetaData({imprint}));
 		const wrapper = mount(FooterBar, MountOptions({store, locale: 'en'}));
 

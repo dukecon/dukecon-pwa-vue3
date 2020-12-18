@@ -1,7 +1,7 @@
 import { MountOptions } from '@t/utils';
 import { shallowMount } from '@vue/test-utils';
 import LoginArea from '@/components/header/LoginArea.vue';
-import { MockStore } from '@t/mocks/store';
+import { MockApiStore } from '@t/mocks/store';
 import type { MetaData } from '@/types';
 
 const metaDataAuth: MetaData = {
@@ -37,21 +37,21 @@ const selector = '.login-area div';
 
 describe('LanguageSelect', () => {
 	it('shows login area if authEnabled=true', async () => {
-		const store = MockStore()
+		const store = MockApiStore()
 		store.commit('initialize', metaDataAuth);
 		const wrapper = shallowMount(LoginArea, MountOptions({store}));
 
 		expect(wrapper.find(selector).exists()).toBe(true);
 	});
 	it('hides login area if authEnabled=false', async () => {
-		const store = MockStore()
+		const store = MockApiStore()
 		store.commit('initialize', metaDataNoauth);
 		const wrapper = shallowMount(LoginArea, MountOptions({store}));
 
 		expect(wrapper.find(selector).exists()).toBe(false);
 	});
 	it('hides login area if authEnable not present', async () => {
-		const store = MockStore()
+		const store = MockApiStore()
 		store.commit('initialize', metaDataAuthMissing);
 		const wrapper = shallowMount(LoginArea, MountOptions({store}));
 
