@@ -1,4 +1,5 @@
-$navbar-transition: clip-path 0.5s cubic-bezier(.86,0,.07,1) !default;
+$navbar-transition-down: transform 0.4s cubic-bezier(.68,-0.2,.27,1.55) !default;
+$navbar-transition-up: transform 0.4s cubic-bezier(.68,-0.5,.27,1.1) !default;
 $navbar-item-hover-transition: background-color 0.6s ease, color 0.6s ease !default;
 $navbar-height: 3rem !default;
 $navbar-fontsize: 1.3rem !default;
@@ -60,26 +61,27 @@ $navbar-fontsize: 1.3rem !default;
 		}
 	}
 	.navbar-menu {
-		clip-path: inset(0 0 100% 0);
+		transform: scale(1,0);
+		transform-origin: top;
 		display: flex;
 		flex-direction: column;
 		padding: 0 2px;
 		position: absolute;
 		top: $headerHeight;
 		right: 0;
-		transition: $navbar-transition;
+		transition: $navbar-transition-up;
 		background-color: $primary;
 		box-shadow: $boxShadow;
 		.navbar-item:first-child {
 			margin-top: 2px;
 		}
 		& > * {
-			visibility: hidden;
 			transition-delay: 0.5s;
 		}
 		&.is-active {
 			display: flex;
-			clip-path: inset(0 0 0 0);
+			transition: $navbar-transition-down;
+			transform: scale(1,1);
 			* {
 				visibility: visible;
 				transition-delay: 0s;
