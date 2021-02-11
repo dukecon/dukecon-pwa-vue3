@@ -1,8 +1,8 @@
 <template>
-	<div class="talks-card card">
+	<router-link :to="'/talk/' + talk.id" class="talks-card card">
 		<h3 class="title is-3">{{ talk.title }}</h3>
 		<div>{{ getTimeStringWithWeekday(talk.start) }} - {{ getTimeString(talk.end) }} </div>
-	</div>
+	</router-link>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
