@@ -1,6 +1,6 @@
 import type { state } from './';
 import { eventMatches } from '@/utils/filter';
-import type { Talk } from '@/types';
+import type { Id, Speaker, Talk } from '@/types';
 
 const sortByDate = (a: Talk, b: Talk) : number => a.start.localeCompare(b.start);
 
@@ -18,7 +18,14 @@ export const getters = {
 		return searchString?.length > 2 ?
 			events.filter(eventMatches(searchString)) :
 			events;
-	}
+	}, 
+	talkById: ({ events }: state ) => (id:Id) => {
+		return events.find((event:Talk) => event.id === id);
+	},
+	speakerById: ({ speakers }: state, id:Id ) => {
+		return speakers.find((speaker: Speaker) => speaker.id === id);
+	},
+
 };
 
 export const mutations = {

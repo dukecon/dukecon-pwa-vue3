@@ -41,12 +41,26 @@ export interface Talk {
 	numberOfFavorites: number;
 	keywords?: Record<string, string[]>;
 	documents?: Record<string, string | undefined | null>;
-	trackId: string;
+	trackId: Id;
 	audienceId: string;
-	typeId: string;
-	locationId: string;
-	speakerIds: string[];
-	languageId: string;
+	typeId: Id;
+	locationId: Id;
+	speakerIds: Id[];
+	languageId: Id;
+}
+
+export interface Speaker {
+	id: Id;
+	name?: string;
+	firstname?: string;
+	lastname?: string;
+	company?: string;
+	website?: string;
+	twitter?: string;
+	linkedin?: string;
+	bio?:string;
+	photoId?: Id;
+	eventIds?: Id[];
 }
 
 export interface Location extends NamedOrderedItem {

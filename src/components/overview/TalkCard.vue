@@ -1,5 +1,5 @@
 <template>
-	<router-link :to="'/talk/' + talk.id" class="talks-card card">
+	<router-link :to="'/talk/' + talk.id" class="talk-card card">
 		<h3 class="title is-3">{{ talk.title }}</h3>
 		<div>{{ getTimeStringWithWeekday(talk.start) }} - {{ getTimeString(talk.end) }} </div>
 	</router-link>

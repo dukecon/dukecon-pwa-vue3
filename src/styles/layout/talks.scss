@@ -5,9 +5,25 @@
 	grid-gap: 0.5rem;
 	ul {
 		display: contents;
-		li {
+			li {
 			background: white;
-			padding: 0.25rem;
+			.talk-card {
+				margin: 0;
+				padding: 0.5rem;
+				display: block;
+				div {
+					color: $text;
+				}
+				.stream {
+					font-style: italic;
+				}
+			}
 		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.talks-grid {
+		margin-left: 32px;
 	}
 }

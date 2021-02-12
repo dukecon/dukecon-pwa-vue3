@@ -6,6 +6,7 @@ $highlight-dark: findDarkColor($highlight) !default;
 $alternate-light: findLightColor($alternate) !default;
 $alternate-dark: findDarkColor($alternate) !default;
 
+$text: #666;
 $info: $highlight !default;
 $warn: $alternate !default;
 $white-ter: #eee !default;
@@ -34,5 +35,6 @@ $navbar-background-color: rbga(0,0,0,0);
 $navbar-height: 2rem;
 $navbar-fontsize: 1.2rem;
 $navbar-item-color: $white-ter;
+$navbar-item-active-color: $primary;
 $navbar-item-hover-background-color: $white-ter;
 $navbar-item-active-background-color: $white;

@@ -17,8 +17,13 @@
 *, ::before, ::after {
 	box-sizing: border-box;
 }
+
 body {
 	font-family: Arial,Ubuntu,Helvetica,Nimbus Sans L,Droid Sans,FreeSans,Liberation Sans,Trebuchet MS,Sans-Serif;
+}
+
+.title {
+	color: inherit;
 }
 
 .has-background-transparent {
@@ -31,6 +36,7 @@ body {
 
 *:focus, *.is-focused, ::part(anchor):focus {
 	outline: 2px solid $alternate !important;	
+	outline-offset: -2px;
 }
 
 .button.is-image-button {

@@ -14,11 +14,6 @@ export default defineComponent({
 	components: {
 		TalkCard,
 	},
-	setup() {
-		return {
-
-		};
-	},
 	props: {
 		events: Object as () => Array<Talk>,
 	}
