@@ -39,7 +39,7 @@
     "@vue/test-utils": "^2.0.0-rc.1",
     "babel-eslint": "^10.1.0",
     "bulma": "^0.9.2",
-    "chromedriver": "^88.0.0",
+    "chromedriver": "^89.0.0",
     "eslint": "^7.20.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",

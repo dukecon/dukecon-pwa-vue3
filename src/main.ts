@@ -1,7 +1,7 @@
 import '@/styles/app.scss';
 import { createApp } from 'vue'
 import App from '@/App.vue'
-import { ExternalLink } from '@/components/webcomponent/ExternalLink.ts'
+import { ExternalLink } from '@/components/webcomponent/ExternalLink'
 import '@/registerServiceWorker'
 import router from '@/router'
 import { Store, store } from '@/store';
