@@ -1,5 +1,5 @@
 <template>
-	<div class="talks-grid has-background-white-ter">
+	<div class="talks-grid has-background-grey-lighter">
 		<ul>
 			<li v-for="event in events" :key="event.id"><talk-card :talk="event" /></li>
 		</ul>

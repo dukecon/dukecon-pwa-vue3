@@ -5,7 +5,7 @@
 	position: sticky;
 	line-height: $footerHeight;
 	bottom: 0;
-	height: 2rem;
+	height: $footerHeight;
 	padding: 0;
 	font-size: smaller;
 	box-shadow: $boxShadowTop;
@@ -13,6 +13,6 @@
 	overflow-x: auto;
 	white-space: nowrap;
 	external-link + external-link{
-		margin-left: 0.5rem;
+		margin-left: $standard-gap;
 	}
 }

@@ -1,6 +1,6 @@
 $navbar-transition-down: transform 0.4s cubic-bezier(.68,-0.2,.27,1.55) !default;
 $navbar-transition-up: transform 0.4s cubic-bezier(.68,-0.5,.27,1.1) !default;
-$navbar-item-hover-transition: background-color 0.6s ease, color 0.6s ease !default;
+$navbar-item-hover-transition: background-color 0.3s ease, color 0.3s ease !default;
 $navbar-item-active-color: $primary !default;
 $navbar-height: 3rem !default;
 $navbar-fontsize: 1.3rem !default;
@@ -19,12 +19,16 @@ $navbar-fontsize: 1.3rem !default;
 	.navbar-item {
 		white-space: nowrap;
 		transition: $navbar-item-hover-transition;
+		&:hover {
+			@include focus-mixin;
+		}
 		&::part(anchor) {
 			padding: 0.5rem 0.75rem;
 			color: $navbar-item-color;
 			background-color: inherit;
 			transition: $navbar-item-hover-transition;
 			&:hover {
+				@include focus-mixin;
 				color: $navbar-item-hover-color;
 				background-color: $navbar-item-hover-background-color;
 			}

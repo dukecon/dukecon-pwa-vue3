@@ -1,0 +1,27 @@
+@import './layout/badge';
+@import './layout/page';
+@import './layout/side-menu';
+@import './layout/talks';
+
+.has-background-transparent {
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.is-borderless {
+	border: none !important;
+}
+
+.button.is-image-button {
+	padding: 0;
+	margin: 0;
+	background: white;
+	width: auto;
+	height: auto;
+}
+.is-button-image {
+	transition: opacity 0.2s ease-in;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+

@@ -20,7 +20,7 @@ $footerHeight: 2em !default;
 	grid-template: "logo search login nav lang" auto / auto 1fr auto auto auto;
 	align-items: center;
 	justify-items: left;
-	gap: 0.5rem;
+	gap: $standard-gap;
 	box-shadow: $boxShadowBottom;
 	z-index: 1;
 	.logo {
@@ -51,7 +51,7 @@ $footerHeight: 2em !default;
 }
 
 .main-area {
-	padding: 0.5rem;
+	padding: $standard-gap;
 	grid-area: main;
 	overflow: auto;
 	//max-height: calc(100vh - 5rem);

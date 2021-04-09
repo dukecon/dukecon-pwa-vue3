@@ -2,15 +2,20 @@
 	display: grid;
 	padding: 0.5em;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	grid-gap: 0.5rem;
+	grid-gap: $standard-gap;
 	ul {
 		display: contents;
 			li {
 			background: white;
 			.talk-card {
 				margin: 0;
-				padding: 0.5rem;
+				padding: $standard-gap;
 				display: block;
+				height: 100%;
+				&:hover, &:focus {
+					@include focus-mixin;
+					box-shadow: $boxShadow;
+				}
 				div {
 					color: $text;
 				}

@@ -1,15 +1,15 @@
 @import './custom-colors.scss';
 
 //----------- colors
-$highlight-light: findLightColor($highlight) !default;
-$highlight-dark: findDarkColor($highlight) !default;
-$alternate-light: findLightColor($alternate) !default;
-$alternate-dark: findDarkColor($alternate) !default;
+$highlight-light: findLightColor($highlight);
+$highlight-dark: findDarkColor($highlight);
+$alternate-light: findLightColor($alternate);
+$alternate-dark: findDarkColor($alternate);
 
 $text: #666;
-$info: $highlight !default;
-$warn: $alternate !default;
-$white-ter: #eee !default;
+$info: $highlight;
+$warn: $alternate;
+$grey-lighter: #e5e5e5;
 
 // .is-highlight/.is-alternate maps to these
 $custom-colors: ("highlight": ($highlight-dark, $highlight-light), "alternate": ($alternate-dark, $alternate-light));
@@ -30,6 +30,7 @@ $size-6: 1rem;
 //----------- components
 $headerHeight: 3rem;
 $footerHeight: 2em;
+$standard-gap: 0.5rem;
 
 $navbar-background-color: rbga(0,0,0,0);
 $navbar-height: 2rem;

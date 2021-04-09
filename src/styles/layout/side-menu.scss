@@ -12,6 +12,7 @@ $side-menu-transition: left 0.4s cubic-bezier(.68,-0.55,.27,1.55) !default;
 	.toggle-menu-content {
 		padding: 1rem;
 		position: fixed;
+		margin-top: $standard-gap;
 		top: $headerHeight;
 		width: $side-menu-width;
 		box-shadow: $boxShadow;

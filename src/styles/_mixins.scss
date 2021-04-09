@@ -1,0 +1,5 @@
+@mixin focus-mixin {
+	outline: 2px solid $alternate !important;	
+	outline-offset: -2px;
+}
+

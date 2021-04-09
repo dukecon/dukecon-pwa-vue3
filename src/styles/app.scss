@@ -2,6 +2,7 @@
 @import 'bulma/sass/utilities/functions';
 
 @import './_theme';
+@import './mixins';
 
 /** own colors and variables */
 @import 'bulma/sass/utilities/_all';
@@ -26,4 +27,5 @@
 
 /** own overrides */
 @import './app-overrides';
+@import './app-extensions';
 
