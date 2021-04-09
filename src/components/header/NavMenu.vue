@@ -46,7 +46,6 @@ export default defineComponent({
 			isOpen.value = !isOpen.value
 		};
 		const close = () =>  {
-			console.log('CLOSE TRIGGERED')
 			isOpen.value = false;
 		};
 

@@ -31,7 +31,6 @@ describe('NavMenu', () => {
 		const button = wrapper.find('button');
 		const menu = wrapper.find('.navbar-menu');
 
-		console.log(menu);
 		await button.trigger('click');
 		expect(menu.classes(classToCheck)).toBe(true);
 		expect(button.classes(classToCheck)).toBe(true);
