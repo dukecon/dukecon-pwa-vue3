@@ -42,3 +42,5 @@ Alternatively, colors can be set at build time (ENV var?)
 
 I18n
 vue-i18n is not vue-3-ready, but there is also vue-i18n-next, which is still in beta: https://github.com/intlify/vue-i18n-next
+
+npm 7 and package.json -> npx jessevanassen/npm-update to generate an update command that will also update the package.json 
