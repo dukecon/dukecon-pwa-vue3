@@ -1,7 +1,7 @@
 import { MountOptions } from '@t/utils';
 import { mount } from '@vue/test-utils';
 import NavMenu from '@/components/header/NavMenu.vue';
-import router from '@/router'
+import { router } from '@/setup'
 
 const classToCheck = 'is-active';
 

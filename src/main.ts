@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import App from '@/App.vue'
 import { ExternalLink } from '@/components/webcomponent/ExternalLink'
 import '@/registerServiceWorker'
-import router from '@/router'
+import { router } from '@/setup'
 import { Store, store } from '@/store';
 import { I18n } from '@/translations';
 
