@@ -6,10 +6,10 @@ module.exports = {
 		"^@t/(.*)$": "<rootDir>/tests/$1"
 	},
 	transform: {
-		"^.+\\.vue$": "vue-jest"
+		"^.+\\.vue$": "@vue/vue3-jest"
 	},
 	globals: {
-		"vue-jest": {
+		"@vue/vue3-jest": {
 			templateCompiler: {
 				compilerOptions: {
 					isCustomElement: tag => ['external-link'].includes(tag)
